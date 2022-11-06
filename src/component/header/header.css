@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
+
+.header{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 2rem;
+    height: 5rem;
+    font-family: 'Inter', sans-serif;
+   
+}
+
+.title{
+    color: #020512;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+
+}
+.title> span {
+    color: #132CAD;
+ 
+}
+.navBar{
+    
+}
+
+.navBar > ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.navBar > ul  > li {
+    margin:0 1rem
+    
+}
+
+.navBar > ul  > li  > a{
+    text-decoration: none;
+    color:#020512;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    
+}
+
+
+
+.btn{
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 28px;
+    margin: 0 11px;
+    border: none;
+    height:2.5rem;
+    border-radius: 5px;
+    width: 5rem;
+}
+
+.primary-btn{
+    height: 2.7rem;
+    background-color: #132CAD;
+    color: #FBFBFC;
+}
+
+
+@media (max-width: 1000px) {
+    .navBar{
+       display: none;
+    }
+}
