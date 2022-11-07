@@ -12,7 +12,17 @@ const projects = [
         raised: "100,000",
         goal:"1,000,000",
         days: "30",
-        img: "/project1.png"
+        img: "/project1.png",
+        link :"/project"
+    },
+    {
+        name :"Metaverse Headset",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, eligendi! Excepturi, corrupti.",
+        raised: "100,000",
+        goal:"1,000,000",
+        days: "30",
+        img: "/project2.png",
+        link :"/project"
     },
     {
         name :"EdTech startUp",
@@ -20,7 +30,8 @@ const projects = [
         raised: "100,000",
         goal:"1,000,000",
         days: "30",
-        img: "/project2.png"
+        img: "/banner.png",
+        link :"/project"
     },
     {
         name :"EdTech startUp",
@@ -28,31 +39,26 @@ const projects = [
         raised: "100,000",
         goal:"1,000,000",
         days: "30",
-        img: "/banner.png"
+        img: "/project3.png",
+        link :"/project"
     },
     {
-        name :"EdTech startUp",
+        name :"Metaverse Headset",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, eligendi! Excepturi, corrupti.",
         raised: "100,000",
         goal:"1,000,000",
         days: "30",
-        img: "/project3.png"
+        img: "/banner.png",
+        link :"/project"
     },
     {
-        name :"EdTech startUp",
+        name :"Marketing Institution",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, eligendi! Excepturi, corrupti.",
         raised: "100,000",
         goal:"1,000,000",
         days: "30",
-        img: "/banner.png"
-    },
-    {
-        name :"EdTech startUp",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, eligendi! Excepturi, corrupti.",
-        raised: "100,000",
-        goal:"1,000,000",
-        days: "30",
-        img: "/project2.png"
+        img: "/project2.png",
+        link :"/project"
     },
 
 ]
@@ -83,6 +89,7 @@ const Explore = () => {
                             goal ={data.goal}
                             img = {data.img}
                             days = {data.days}
+                            link ={data.link}
                         />
                        )
                    })}

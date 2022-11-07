@@ -1,5 +1,6 @@
 
 import {BsClock} from "react-icons/bs"
+import { Link } from "react-router-dom"
 
 type projectDetailsType = {
   title : string,
@@ -7,17 +8,22 @@ type projectDetailsType = {
   raised: string,
   goal: string,
   img :string,
-  days:string
+  days:string,
+  link : string
 }
 
 const ProjectCard = (props :projectDetailsType ) => {
-    const {title, description,raised, goal, days, img } = props
+    const {title, description,raised, goal, days, img, link } = props
     return ( 
         <div className="pcard">
           <img src={img}/>
             <div className="cdetail">
                     <h3 > fundraising</h3>
-                    <h2>{title}</h2>
+                    <h2>
+                       <Link to={link}>
+                           {title}
+                        </Link> 
+                    </h2>
                     <p>{description}</p>
                     <div className="lowerpart">
                                 <div className="rightc">

@@ -1,0 +1,13 @@
+.project{
+    width:90%;
+    margin: auto;
+}
+
+
+@media (max-width:600px) {
+    .project{
+        width:100%;
+        margin: auto;
+    }
+
+}
