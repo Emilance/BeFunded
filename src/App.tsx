@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom'
 import Signup from './Pages/SignUp/Signup';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Home from './Pages/Home/Home';
+import Footer from './component/footer/Footer';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/signUp' element={<Signup />} />
         <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

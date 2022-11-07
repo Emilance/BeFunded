@@ -83,4 +83,15 @@
     .navBar{
        display: none;
     }
+    .btn{
+        width: 3.5rem;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 0.8rem;
+        line-height: 28px;
+        margin: 0  5px;
+    }
+    .primary-btn{
+        width: 4rem;
+    }
 }
