@@ -32,7 +32,7 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-            <div className="btnContainer">
+            <div className="btncontainer">
                 <button className="btn" onClick={handleLogin}>
                     Login
                 </button>

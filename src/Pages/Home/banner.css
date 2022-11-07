@@ -14,10 +14,20 @@
     text-align: center;
 }
 
+
+.banner > h2 {
+    max-width: 60%;
+    margin:1rem auto;
+        
+    font-family: 'Inter';
+    font-style: normal;
+    color: #081349;
+
+    text-align: center;
+}
 .banner > h1  > span {
     color:  #FBBF24;
 }
-
 .banner > p{
     font-family: 'Inter';
     font-style: normal;
@@ -45,6 +55,10 @@
 .brand> span {
     color: #132CAD;
  
+}
+.btnContainer{
+    margin: auto;
+    width: fit-content;
 }
 
 @media (max-width: 600px) {
