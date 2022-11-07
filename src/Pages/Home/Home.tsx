@@ -1,7 +1,7 @@
 import Banner from "./Banner";
 import Bigthing from "./Bigthing";
 import Explore from "./Explore";
-import "./home.css"
+import "./Home.css"
 const Home = () => {
     return ( 
         <div className="home">
