@@ -1,7 +1,18 @@
-
 import "./header.css"
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        navigate('/login')
+    }
+
+    const handleRegister = () => {
+        navigate('/signup')
+    }
+    
     return ( 
         <div className="header">
             <h1 className="title">Be<span>Funded</span></h1>
@@ -22,10 +33,10 @@ const Header = () => {
                 </ul>
             </nav>
             <div className="btnContainer">
-                <button className="btn">
+                <button className="btn" onClick={handleLogin}>
                     Login
                 </button>
-                <button  className="btn primary-btn">
+                <button className="btn primary-btn" onClick={handleRegister}>
                     Register
                 </button>
             </div>

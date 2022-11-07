@@ -1,0 +1,9 @@
+.signUp{
+    border: 1px solid red;
+    min-height: 100vh;
+}
+
+.signUp__container{
+    border: 3px solid green;
+    margin-top: 100px;
+}
