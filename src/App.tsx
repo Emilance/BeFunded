@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home';
 import Signup from './Pages/SignUp/Signup';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import SignIn from './Pages/SignIn/SignIn';
+import Verify from './Pages/Verify/Verify';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/signUp' element={<Signup />} />
         <Route path='/login' element={<SignIn />} />
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/verify' element={<Verify />}/>
       </Routes>
     </div>
   );
