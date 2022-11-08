@@ -62,6 +62,10 @@
     margin: 0;
     box-shadow: 0px 0px 1px black;
 }
+.cdetail> h2 >a {
+    text-decoration: none;
+    color:  #020512;
+}
 .pcard > img{
     width: 100%;
     height: 10rem;

@@ -1,0 +1,55 @@
+
+.pinfo{
+    display: flex;
+    width: 93%;
+    margin: auto;
+    margin-top: 2rem;
+    color: #565560;
+}
+
+.pinfosb{
+    flex: 0.3;
+}
+
+.pinfosb > p{
+    margin: 1rem 0;
+}
+
+.infoCon{
+    flex:1;
+    padding-left: 2rem;
+}
+.divider {
+    width:0.9px;
+    height: 30rem;
+    background-color: #5655608e;
+    margin: 0;
+    padding: 0;
+}
+
+.paragraph{
+    margin: 1rem;
+}
+
+.paragraph >h3  {
+    color: #020512;
+    margin-bottom: 1rem;
+}
+
+.teamCon{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     margin: 1rem;
+}
+
+.teamcard{
+    margin: 1rem;
+}
+
+.teamcard >img {
+    height: 10rem;
+    width: 14rem;
+}
+.teamcard > h4{
+    color: #020512;
+}
