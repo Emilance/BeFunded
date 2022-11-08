@@ -1,0 +1,148 @@
+.signIn{
+    /* border: 1px solid red; */
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+.signIn__logo{
+    position: absolute;
+    left: 100px;
+    top: 50px;
+}
+
+.signIn__container{
+    margin: auto;
+    /* border: 1px solid red; */
+    margin-top: 150px;
+    text-align: center;
+}
+
+
+.signIn__header{
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: #303030;
+}
+
+.signIn__option{
+    display: flex;
+    gap: 10px;
+    /* border: 1px solid red; */
+    margin: 3rem 0;
+}
+
+@media screen and (max-width:830px) {
+    .signIn__option{
+        display: none;
+    }
+}
+
+.signIn__option > div{
+    /* border: 1px solid red; */
+    width: 400px;
+    height: 105px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #EDEFFD;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.signIn__option > div:first-child{
+
+}
+
+.signIn__optionButton{
+    /* color: red; */
+}
+
+.signIn__optionButton > h3{
+    margin-bottom: 7px; 
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #232323;
+}
+
+.signIn__form{
+    /* border: 1px solid red; */
+    width: 80%;
+    margin-inline: auto;
+}
+
+.signIn__formDiv > *{
+    display: block;
+}
+
+.signIn__formDiv > label{
+    text-align: left;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #303030;
+    margin-bottom: 4px;
+}
+
+.signIn__formDiv > input{
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px 0;
+    padding-left: 1rem;
+    font-size: 18px;
+}
+
+.signIn__formInput > input::placeholder{
+    /* padding-left: 1rem; */
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: rgba(48, 48, 48, 0.5);
+}
+
+.signIn__formButton{
+    width: 100%;
+    height: 68px;
+    background: #132CAD;
+    border-radius: 8px;
+    /* font-family: 'Inter'; */
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+
+.signIn__question > p{
+    /* font-family: 'Inter'; */
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #2B2A30;
+    text-align: center;
+}
+
+.signIn__google{
+    /* font-family: 'Inter'; */
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #EA4335;
+    width: 100%;
+    padding: 20px 0px;
+    border: 1px solid red;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.signIn__form > *{
+    margin-bottom: 30px;
+}
