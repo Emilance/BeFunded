@@ -10,6 +10,7 @@ import Verify from './Pages/Verify/Verify';
 import Home from './Pages/Home/Home';
 import Footer from './component/footer/Footer';
 import Project from './Pages/Project/Project';
+import SignIn from './Pages/SignIn/SignIn';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/project' element={<Project />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/verify' element={<Verify />}/>
+        <Route path='/login' element={<SignIn/>} />
       </Routes>
       <Footer/>
     </div>
