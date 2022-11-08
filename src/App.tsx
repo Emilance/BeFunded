@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
-import Header from './component/header/Header';
+import './App.css'
 import { Routes, Route } from 'react-router-dom'
 
 import Signup from './Pages/SignUp/Signup';
@@ -14,7 +13,6 @@ import Project from './Pages/Project/Project';
 function App() {
   return (
     <div className="app">
-      <Header/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/signUp' element={<Signup />} />
