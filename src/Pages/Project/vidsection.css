@@ -1,0 +1,69 @@
+.vidsection{
+    margin:2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vidsection> p{
+    margin: auto;
+    font-weight: 650;
+    color: #14532D;
+}
+.vidsection>h1{
+    max-width: 60%;
+    margin: auto;
+        
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    color: #020512;
+
+    text-align: center;
+}
+.btnv{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 28px;
+    margin: 0 11px;
+    border: none;
+    height:3.4rem;
+    border-radius: 8px;
+    width: 7rem;
+    cursor: pointer;
+    background-color: #f8f8f862;
+  
+}
+
+.primary-btnv{
+    height: 3.4rem;
+    background-color: #D0D0D5;
+    width: 6rem;
+}
+.btnContainerv{
+    margin: 2rem auto;
+}
+
+
+.vid{
+    width: 70%;
+    height: 20rem;
+    background-color: #D0D0D5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #020512;
+}
+
+
+@media (max-width:600px) {
+    .vidsection>h1{
+        max-width: 80%;
+        font-size: 1.5rem;
+    }
+    .vid{
+        width: 80%;
+    }
+}

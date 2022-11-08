@@ -1,0 +1,71 @@
+.banner{
+    margin: 3.5rem auto;
+    width: 78%;
+}
+.banner > h1 {
+    max-width: 60%;
+    margin: auto;
+        
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    color: #081349;
+
+    text-align: center;
+}
+
+
+.banner > h2 {
+    max-width: 60%;
+    margin:1rem auto;
+        
+    font-family: 'Inter';
+    font-style: normal;
+    color: #081349;
+
+    text-align: center;
+}
+.banner > h1  > span {
+    color:  #FBBF24;
+}
+.banner > p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    max-width: 70%;
+    margin:0.7rem auto;
+    line-height: 24px;
+    text-align: center;
+    color:#081349;
+}
+
+.bimageContainer{
+    position: relative;
+    width: 100%;
+}
+.bimageContainer > img{
+
+   width: 100%;
+   height: 100%;
+}
+.brand{
+    color: #020512;
+    
+}
+.brand> span {
+    color: #132CAD;
+ 
+}
+.btnContainer{
+    margin: auto;
+    width: fit-content;
+}
+
+@media (max-width: 600px) {
+    .banner > h1 {
+        max-width: 90%;
+    }
+    .banner > p{
+       max-width: 100%;
+    }
+  }

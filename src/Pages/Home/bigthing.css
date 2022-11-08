@@ -1,0 +1,30 @@
+.bigthing{
+    width: 90%;
+    margin: 4rem auto;
+}
+
+.bigthing >h1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    color: #081349;
+    text-align: start;
+    margin: 2rem;
+}
+
+.bigthing >p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    color:#081349;
+    margin: 2rem;
+    font-size: 1rem;
+}
+
+.bigthing > h2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    text-align: start;
+    margin: 2rem;
+}

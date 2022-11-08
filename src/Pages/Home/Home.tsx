@@ -1,13 +1,15 @@
-import React from 'react'
-import Header from '../../component/header/Header';
-import './Home.css';
-
+import Banner from "./Banner";
+import Bigthing from "./Bigthing";
+import Explore from "./Explore";
+import "./Home.css"
 const Home = () => {
-  return (
-    <div>
-        <Header />
-    </div>
-  )
+    return ( 
+        <div className="home">
+           <Banner/>
+           <Explore/>
+           <Bigthing/>
+        </div>
+     );
 }
-
-export default Home
+ 
+export default Home;

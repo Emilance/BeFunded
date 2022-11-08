@@ -1,5 +1,5 @@
 import "./header.css"
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Header = () => {
 
@@ -19,20 +19,20 @@ const Header = () => {
             <nav className="navBar">
                 <ul >
                     <li>
-                        <a href="#">Home</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <a href="#">Explore</a>
+                        <Link to="#">Explore</Link>
                     </li>
                     <li>
-                        <a href="#">Start A Campaign</a>
+                        <Link to="#">Start A Campaign</Link>
                     </li>
                     <li>
-                        <a href="#">Top Picks</a>
+                        <Link to="#">Top Picks</Link>
                     </li>
                 </ul>
             </nav>
-            <div className="btnContainer">
+            <div className="btncontainer">
                 <button className="btn" onClick={handleLogin}>
                     Login
                 </button>

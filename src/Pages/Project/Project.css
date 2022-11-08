@@ -1,0 +1,14 @@
+.project{
+    width:90%;
+    margin: auto;
+    color: #565560;
+}
+
+
+@media (max-width:600px) {
+    .project{
+        width:100%;
+        margin: auto;
+    }
+
+}

@@ -1,19 +1,17 @@
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
 
-.app {
-  /* text-align: center; */
-  /* padding: 0 4rem;  */
-  /* overflow-x: hidden;  */
+.App {
+  text-align: center;
+   width: 90%;
+   margin: auto;
+  font-family: 'Inter', sans-serif;
 }
 
 
 
 @media (max-width: 600px) {
-  .app{
-    /* padding: 0; */
+  .App{
+    padding: 0;
+    width: 100%;
   }
 }
