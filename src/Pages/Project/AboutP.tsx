@@ -39,12 +39,9 @@ const AboutP = () => {
                 I want to invest but I dont have the minimum
              </button>
 
-             <button className="sbtn">
-               <Link to="/invest">
-
+               <Link  className="sbtn"to="/invest"> 
                  INVEST IN E-vamp
                </Link>
-             </button>
         </div>
         </div>
      );

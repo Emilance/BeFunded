@@ -3,6 +3,7 @@ import Videosection from "./Videosection";
 import "./Project.css"
 import Details from "./Details";
 import Header from "../../component/header/Header";
+import Footer from "../../component/footer/Footer";
 
 const Project = () => {
     return ( 
@@ -11,7 +12,8 @@ const Project = () => {
             <Videosection/>
             <AboutP/>
             <Details/>
-            <Project/>
+            <Footer/>
+
         </div>
      );
 }
