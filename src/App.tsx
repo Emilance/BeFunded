@@ -28,7 +28,6 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/signUp' element={<Signup />} />
         <Route path='/project' element={<Project />} />
-        <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/verify' element={<Verify />}/>
         <Route path='/login' element={<SignIn/>} />
         <Route path='/idashboard' element={<Idashboard/>} />
@@ -39,6 +38,9 @@ function App() {
           <Route path='settings' element={<SettingPage />}/>
           <Route path='products' element={<ProductPage />}/>
           <Route path='productsreg' element={<ProductReg />}/>
+
+
+
         </Route>
       </Routes>
      
