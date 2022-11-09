@@ -1,6 +1,7 @@
 
 import {FaLinkedin, FaFacebookSquare} from "react-icons/fa"
 import {SiTwitter} from "react-icons/si"
+import { Link } from "react-router-dom";
 import "./about.css"
 
 const AboutP = () => {
@@ -37,9 +38,10 @@ const AboutP = () => {
              <button className="s1btn">
                 I want to invest but I dont have the minimum
              </button>
-             <button className="sbtn">
+
+               <Link  className="sbtn"to="/invest"> 
                  INVEST IN E-vamp
-             </button>
+               </Link>
         </div>
         </div>
      );

@@ -1,0 +1,85 @@
+.idash{
+    display: flex;
+}
+.dsidebar{
+    flex: 0.2;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.dash{
+    flex:1;
+}
+
+.dsidebar > h1{
+    margin-bottom: 2.8rem;
+}
+
+.singlei{
+    display: flex;
+    height: 3.7rem;
+    margin: 0.5rem;
+    
+    justify-content:flex-start;
+    align-items: center;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.singlei-active{
+    background-color: #EDEFFD ;
+}
+.dicon{
+    margin-right: 1rem;
+}
+.title{
+    color: #020512;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.7rem;
+    line-height: 39px;
+    text-align: center;
+
+}
+.dheader{
+    height: 4rem;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 2rem;
+}
+
+.profilebar{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: fit-content ;
+   
+}
+.picon{
+    cursor: pointer;
+    color: #000000;
+}
+.profilebar> p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 28px;
+    padding: 0 0.5rem;
+}
+.profilebar >img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 700px) {
+    .dsidebar{
+        display: none;
+    }
+    .dheader{
+        padding: 0 1rem;
+    }
+}

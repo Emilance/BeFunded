@@ -1,0 +1,55 @@
+.welcome{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+}
+
+.welcome > h1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 32px;
+}
+.invest{
+    height: 13rem;
+    background-color: #EDEFFD;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.invest >p{
+    color: #565560;
+    width: 50%;
+    margin: 1rem 0;
+}
+
+.invest>button {
+    width: 10rem;
+    height: 2.5rem;
+    background-color:#132CAD;
+    border: none;
+    color: #ffffff;
+    border-radius: 8px;
+}
+.invest > h1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 32px;
+}
+
+.invest >p{
+    color: #565560;
+}
+
+@media (max-width: 700px) {
+    .invest > p{
+        width: 90%;
+    }
+}

@@ -1,0 +1,77 @@
+.investi {
+    padding: 0 4rem;
+}
+.iheader{
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: centers;
+    padding: 0.4rem 2rem;
+}
+
+.iprofilebar{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: fit-content ;
+   
+}
+.picon{
+    cursor: pointer;
+    color: #000000;
+}
+.iprofilebar> p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 28px;
+    padding: 0 0.5rem;
+}
+.iprofilebar >img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.backarrow{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.backarrow >p{
+    margin-left: 0.4rem;
+}
+
+
+.upperinvest> .ititle{
+    margin: auto;
+    font-weight: 650;
+    color: #14532D;
+}
+.upperinvest>p{
+    margin: 0.2rem auto;
+}
+.upperinvest>h1{
+    max-width: 60%;
+    margin:1rem auto 0.5rem auto;     
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    color: #020512;
+    text-align: center;
+}
+.upperinvest{
+    margin:2rem auto;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media (max-width:700px) {
+    .investi{
+        padding: 0;
+    }
+}
