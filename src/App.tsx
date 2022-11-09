@@ -5,12 +5,19 @@ import Header from './component/header/Header';
 import { Routes, Route } from 'react-router-dom'
 
 import Signup from './Pages/SignUp/Signup';
-import Dashboard from './Pages/Dashboard/Dashboard';
+import Dashboard from './Pages/EDashboard/EDashboard';
 import Verify from './Pages/Verify/Verify';
 import Home from './Pages/Home/Home';
 import Footer from './component/footer/Footer';
 import Project from './Pages/Project/Project';
 import SignIn from './Pages/SignIn/SignIn';
+import EDashboard from './Pages/EDashboard/EDashboard';
+import WalletPage from './Pages/EDashboard/WalletPage/WalletPage';
+import MediaPage from './Pages/EDashboard/MediaPage/MediaPage';
+import SettingPage from './Pages/EDashboard/SettingPage/SettingPage';
+import ProductPage from './Pages/EDashboard/ProductPage/ProductPage';
+import EMainPage from './Pages/EDashboard/EMainPage/EMainPage';
+import ProductReg from './Pages/EDashboard/ProductReg/ProductReg';
 
 function App() {
   return (
@@ -23,6 +30,14 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/verify' element={<Verify />}/>
         <Route path='/login' element={<SignIn/>} />
+        <Route path='/dashboard' element={< EDashboard/>}>
+          <Route path='/dashboard' element={<EMainPage />}/>
+          <Route path='wallet' element={<WalletPage />}/>
+          <Route path='media' element={<MediaPage />}/>
+          <Route path='settings' element={<SettingPage />}/>
+          <Route path='products' element={<ProductPage />}/>
+          <Route path='productsreg' element={<ProductReg />}/>
+        </Route>
       </Routes>
       <Footer/>
     </div>

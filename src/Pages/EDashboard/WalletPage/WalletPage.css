@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.walletPage{
+    /* background: red; */
+    /* border: 1px solid red; */
+    width: 95%;
+    margin-inline: auto;
+    min-height: calc(100vh - 93px);
+    font-family: 'Poppins', sans-serif;
+}
+
+.walletPage__header{
+    margin-top: 65px;
+}
+
+.walletPage__line{
+    margin: 1rem 0 30px;
+    border: 1px solid #DFE4FD;
+}
+
+.walletPage__detailBox{
+    display: flex;
+    justify-content: space-between;
+    padding: 64px 28px 70px;
+    background: #E9F2FF;
+    border: 1px solid #E9F2FF;
+    border-radius: 5px;
+}
+
+.walletLeft__details{
+    /* border: 1px solid red; */
+}
+
+.walletLeft__totalText{
+    /* font-family: 'Poppins'; */
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #3A3A3A;
+}
+
+.wallet__funds{
+    margin: 1rem 0 5px 0px;
+    font-weight: 700;
+    font-size: 61.04px;
+    line-height: 92px;
+    color: #091A36;
+}
+
+.walletFund__details{
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+/* Right part */
+.walletRight__details{
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.wallet__investors{
+    font-weight: 500;
+    font-size: 31.26px;
+    line-height: 47px;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.wallet__withdraw{
+    padding: 10px 24px;
+    width: 248px;
+    background: #FFFFFF;
+    border: 1px solid #132CAD;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* WALLET PRODUCT */
+.walletProduct__container{
+    /* border: 1px solid red; */
+    margin-top: 65px;
+}
+
+.walletProduct__header,
+.walletProduct__text{
+    font-family: 'Inter', sans-serif;
+}
+
+.walletProduct__text{
+    margin: 14px 0px 55px;
+}
+
+.walletProduct__button{
+    width: 50%;
+    height: 68px;
+    background: #132CAD;
+    border-radius: 8px;
+    /* font-family: 'Inter'; */
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
