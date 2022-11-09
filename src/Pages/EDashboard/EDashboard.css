@@ -1,0 +1,44 @@
+.eDashboard{
+    min-height: 100vh;
+    display: flex;
+}
+
+.eDashboard__sidebar{
+    /* border: 3px solid red; */
+    flex: 0.2;
+    border-right: 1px solid lightgray;
+}
+
+.eDashboard__img{
+    margin-bottom: 95px;
+    margin-top: 35px;
+    padding-left: 43px;
+}
+
+.eDashboard__pages{
+    /* border: 2px solid purple; */
+    display: flex;
+    flex-direction: column;
+    margin-left: 43px;
+}
+
+.eDashboard__page{
+    display: flex;
+    /* border: 1px solid red; */
+    padding: 18px 0 18px 16px;
+    cursor: pointer;
+}
+
+.eDashboard__page:hover{
+    background:  #EDEFFD;
+}
+
+.eDashboard__page > img{
+    margin-right: 1rem;
+}
+
+/* MAIN */
+.eDashboard__main{
+    flex: 1;
+    /* background: red; */
+}
