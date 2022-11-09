@@ -11,6 +11,7 @@ const Project = () => {
             <Videosection/>
             <AboutP/>
             <Details/>
+            <Project/>
         </div>
      );
 }

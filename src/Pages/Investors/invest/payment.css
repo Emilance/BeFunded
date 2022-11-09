@@ -1,0 +1,67 @@
+.popup{
+    position: fixed;
+    top:0;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    background-color: rgba(4, 10, 37, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmpayment{
+    width: fit-content;
+
+    padding: 3rem 2rem;
+    height: fit-content;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.max{
+    max-width: 21rem; 
+}
+
+.confirmpayment> h3{
+    color: #040A25;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.confirmpayment > p{
+    color: #040A25;
+    font-weight: 400;
+    font-size: .8rem;
+    margin-bottom: 0.6rem;
+}
+.field{
+    width: 90%;
+}
+
+.confirmpayment > p >span:nth-child(1){
+    color: #132CAD;
+    font-weight: 500;
+}
+
+.confirmpayment > p >span:nth-child(2){
+    color: #16A34A;
+    font-weight: 500;
+}
+
+.cbtncon{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+.btn{
+    width: 9rem;
+}
+.btnc{
+    background-color: #132CAD;
+    color: #ffffff;
+}

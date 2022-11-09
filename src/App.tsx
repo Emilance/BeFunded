@@ -10,6 +10,8 @@ import Home from './Pages/Home/Home';
 import Footer from './component/footer/Footer';
 import Project from './Pages/Project/Project';
 import SignIn from './Pages/SignIn/SignIn';
+import Idashboard from './Pages/Investors/Dashboard/Dashboard';
+import Invest from './Pages/Investors/invest/Invest';
 
 function App() {
   return (
@@ -21,8 +23,10 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/verify' element={<Verify />}/>
         <Route path='/login' element={<SignIn/>} />
+        <Route path='/idashboard' element={<Idashboard/>} />
+        <Route path='/invest' element={<Invest/>} />
       </Routes>
-      <Footer/>
+     
     </div>
   );
 }
