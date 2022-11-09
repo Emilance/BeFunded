@@ -15,7 +15,8 @@
 .invest{
     height: 13rem;
     background-color: #EDEFFD;
-    padding-left: 2rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
