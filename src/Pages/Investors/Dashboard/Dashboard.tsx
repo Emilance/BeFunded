@@ -8,6 +8,7 @@ import './Dashboard.css'
 import Upperdash from "./Upperdash"
 import Lowerdash from "./Lowerdash"
 import Wallet from "./Wallet"
+import { Link } from "react-router-dom";
 
 type userType = {
     name :string,
@@ -47,7 +48,9 @@ const Idashboard = ({user}: any) => {
             <div className="dash">
                 <div className="dheader">
                     <div className="profilebar">
+                        <Link to="/idashboard">
                         <img src="/profile.png"  alt=""/>
+                        </Link>
                         <p>{user.name}</p>
                         <AiOutlineDown className="picon" size="1.2rem"/>
                     </div>

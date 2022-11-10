@@ -1,5 +1,8 @@
 import "./header.css"
 import { Link, useNavigate } from 'react-router-dom'
+import {AiOutlineDown} from "react-icons/ai"
+import {useEffect} from "react"
+import { getUser } from "../../auth"
 
 const Header = () => {
 
@@ -12,6 +15,9 @@ const Header = () => {
     const handleRegister = () => {
         navigate('/signup')
     }
+    
+      const  user = getUser()
+    
     
     return ( 
         <div className="header">
@@ -32,6 +38,19 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
+            {user.name ?
+                     
+             <div className="profilebar">
+                <Link  to="/idashboard">
+                     <img src="/profile.png"  alt=""/>
+
+                </Link>
+
+                     <p>{user.name}</p>
+                     <AiOutlineDown className="picon" size="1.2rem"/>
+             </div>
+         :
+        
             <div className="btncontainer">
                 <button className="btn" onClick={handleLogin}>
                     Login
@@ -40,6 +59,9 @@ const Header = () => {
                     Register
                 </button>
             </div>
+            
+        }
+   
         </div>
      );
 }

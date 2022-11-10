@@ -68,7 +68,7 @@
     line-height: 28px;
     padding: 0 0.5rem;
 }
-.profilebar >img{
+.profilebar > a> img{
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;

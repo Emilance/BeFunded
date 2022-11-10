@@ -21,9 +21,10 @@ import EMainPage from './Pages/EDashboard/EMainPage/EMainPage';
 import ProductReg from './Pages/EDashboard/ProductReg/ProductReg';
 import  { getUser } from './auth';
 import {useState, useEffect} from "react"
+import { userInfo } from 'os';
 
 function App() {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState(null  || {})
   useEffect(() => {
     const userInfo =  getUser()
      setUser({...user, name :userInfo.name,
@@ -31,8 +32,9 @@ function App() {
        wallet_balance: userInfo.wallet_balance
       })
     }, [])
+   
+    const userI =  getUser()
 
-  
   return (
     <div className="app">
       <Routes>
@@ -41,9 +43,11 @@ function App() {
         <Route path='/project' element={<Project />} />
         <Route path='/verify' element={<Verify />}/>
         <Route path='/login' element={<SignIn/>} />
-        {user   ?
+        {userI.name   ?
         <Route path='/idashboard' element={<Idashboard  user={user}/>} />
-        :  <h1>Loading......</h1>
+        :  
+        <Route path='/idashboard' element={   <h1>Loading...... refresh page or log in</h1>} />
+     
       }
         <Route path='/invest' element={<Invest/>} />
         <Route path='/dashboard' element={< EDashboard/>}>
