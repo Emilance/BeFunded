@@ -19,9 +19,20 @@ import SettingPage from './Pages/EDashboard/SettingPage/SettingPage';
 import ProductPage from './Pages/EDashboard/ProductPage/ProductPage';
 import EMainPage from './Pages/EDashboard/EMainPage/EMainPage';
 import ProductReg from './Pages/EDashboard/ProductReg/ProductReg';
-
+import  { getUser } from './auth';
+import {useState, useEffect} from "react"
 
 function App() {
+  const [user, setUser] = useState({})
+  useEffect(() => {
+    const userInfo =  getUser()
+     setUser({...user, name :userInfo.name,
+       email: userInfo.email, role:userInfo.role,
+       wallet_balance: userInfo.wallet_balance
+      })
+    }, [])
+
+  
   return (
     <div className="app">
       <Routes>
@@ -30,7 +41,10 @@ function App() {
         <Route path='/project' element={<Project />} />
         <Route path='/verify' element={<Verify />}/>
         <Route path='/login' element={<SignIn/>} />
-        <Route path='/idashboard' element={<Idashboard/>} />
+        {user   ?
+        <Route path='/idashboard' element={<Idashboard  user={user}/>} />
+        :  <h1>Loading......</h1>
+      }
         <Route path='/invest' element={<Invest/>} />
         <Route path='/dashboard' element={< EDashboard/>}>
           <Route path='wallet' element={<WalletPage />}/>

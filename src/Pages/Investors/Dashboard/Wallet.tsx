@@ -1,5 +1,5 @@
 import "./wallet.css"
-const Wallet = () => {
+const Wallet = ({user}:any) => {
     return ( 
         <div className="wallet">
             <div className="welcome">
@@ -9,7 +9,7 @@ const Wallet = () => {
                 <div className="left">
 
                  <p>Total Funds</p>
-                 <h1>$1 000 000.00</h1>
+                 <h1>${user.wallet_balance}</h1>
                  <p className="black">Amount saved for investment</p>
                 </div>
                 <div className="right">

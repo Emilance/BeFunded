@@ -3,7 +3,7 @@ import "./banner.css"
 const Banner = () => {
     return ( 
         <div className="banner">
-            <h1> The easiest way to fun and bring your <span>project</span> to life</h1>
+            <h1> The easiest way to fund and bring your <span>project</span> to life</h1>
             <p>A collaborative system that enables organizations and changemakers to work together on initiatives that improve society</p>
              <div className="bimageContainer">
              <img src="/banner.png" alt="turn ideas into reality"/>

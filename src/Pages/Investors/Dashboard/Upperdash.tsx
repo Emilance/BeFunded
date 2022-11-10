@@ -1,10 +1,10 @@
 
 import "./upper.css"
-const Upperdash = () => {
+const Upperdash = ({name}:any) => {
     return ( 
         <div className="upperdash">
             <div className="welcome">
-                <h1>Welcome Boluwatife,</h1>
+                <h1>{`Welome  ${name}`}</h1>
             </div>
             <div className="invest">
                 <h1>No Investment Yet!</h1>

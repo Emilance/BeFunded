@@ -7,7 +7,7 @@ import "./about.css"
 const AboutP = () => {
     return ( 
         <div className="aboutp">
-            <div className="left">
+            <div className="aleft">
             <h3>About E-Vamp</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.</p>
              <p>Website: <a href="#">www.e-vamp.com</a></p>
@@ -18,7 +18,7 @@ const AboutP = () => {
                 <SiTwitter className="ico" color="#55ACEE" size="1rem"/>
              </p>
         </div>
-        <div className="right">
+        <div className="aright">
              <div className="sub">
                 <p>Amount Raised</p>
                 <h3>$200000</h3>
@@ -39,7 +39,8 @@ const AboutP = () => {
                 I want to invest but I dont have the minimum
              </button>
 
-               <Link  className="sbtn"to="/invest"> 
+               <Link className="sbtn" to="/invest">
+
                  INVEST IN E-vamp
                </Link>
         </div>

@@ -41,7 +41,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #EDEFFD;
     border-radius: 8px;
     cursor: pointer;
 }
@@ -51,7 +50,10 @@
 }
 
 .signUp__optionButton{
-    /* color: red; */
+    
+}
+.SO_active{
+    background: #EDEFFD;
 }
 
 .signUp__optionButton > h3{

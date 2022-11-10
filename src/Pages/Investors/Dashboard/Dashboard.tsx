@@ -8,7 +8,14 @@ import './Dashboard.css'
 import Upperdash from "./Upperdash"
 import Lowerdash from "./Lowerdash"
 import Wallet from "./Wallet"
-const Idashboard = () => {
+
+type userType = {
+    name :string,
+    email: string,
+    role:string,
+ wallet_balance: number,
+}
+const Idashboard = ({user}: any) => {
     const [active, setActive] = useState<string>("dashboard")
     const tabClick =(key: string)=>{
         setActive(key)
@@ -41,17 +48,17 @@ const Idashboard = () => {
                 <div className="dheader">
                     <div className="profilebar">
                         <img src="/profile.png"  alt=""/>
-                        <p>Boluwatife</p>
+                        <p>{user.name}</p>
                         <AiOutlineDown className="picon" size="1.2rem"/>
                     </div>
                 </div>
                 {active =="wallet" &&
-                <Wallet/>   
+                <Wallet  user={user}/>   
                 }
                 {active == "dashboard"  &&
                 
                 <>
-                  <Upperdash/>
+                  <Upperdash   name={user.name}/>
                  <Lowerdash/> 
                 </>}
             </div>

@@ -52,6 +52,13 @@
 .upperinvest>p{
     margin: 0.2rem auto;
 }
+.iheader > a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #020512;
+}
 .upperinvest>h1{
     max-width: 60%;
     margin:1rem auto 0.5rem auto;     
