@@ -3,12 +3,16 @@ import { useState } from "react";
 import {BiHomeAlt, BiWallet}  from "react-icons/bi"
 import {FaQuestion}  from "react-icons/fa"
 import {FiSettings}  from  "react-icons/fi"
-import {AiOutlineDown}  from "react-icons/ai"
+import {AiOutlineDown, AiOutlineLeft}  from "react-icons/ai"
 import './Dashboard.css'
 import Upperdash from "./Upperdash"
 import Lowerdash from "./Lowerdash"
 import Wallet from "./Wallet"
 import { Link } from "react-router-dom";
+import {BsPerson} from "react-icons/bs"
+import  {BiLogOut} from "react-icons/bi"
+import ProfileBar from "./DashboardHeader";
+
 
 type userType = {
     name :string,
@@ -17,15 +21,22 @@ type userType = {
  wallet_balance: number,
 }
 const Idashboard = ({user}: any) => {
+    const [headerDropdown, setHeaderDropDown]  = useState(false)
     const [active, setActive] = useState<string>("dashboard")
     const tabClick =(key: string)=>{
         setActive(key)
     }
+    const opendd = <AiOutlineLeft onClick={() => setHeaderDropDown(!headerDropdown)} size="1.2rem" className="picon" />
+
+
+    const closedd = <AiOutlineDown onClick={() => setHeaderDropDown(!headerDropdown)} size="1.2rem" className="picon" />
+
     return ( 
         <div className="idash">
             <div className="dsidebar">
+            <Link to="/">
             <h1 className="title">Be<span>Funded</span></h1>
-
+            </Link>
                 <div className="dmenu">
                     <div  onClick={()=> tabClick("dashboard")} className={active == "dashboard" ? "singlei  singlei-active" : "singlei"}>
                         <BiHomeAlt  className="dicon" size="1rem"/>
@@ -47,13 +58,7 @@ const Idashboard = ({user}: any) => {
             </div>
             <div className="dash">
                 <div className="dheader">
-                    <div className="profilebar">
-                        <Link to="/idashboard">
-                        <img src="/profile.png"  alt=""/>
-                        </Link>
-                        <p>{user.name}</p>
-                        <AiOutlineDown className="picon" size="1.2rem"/>
-                    </div>
+                   <ProfileBar   user={user}s/>
                 </div>
                 {active =="wallet" &&
                 <Wallet  user={user}/>   
