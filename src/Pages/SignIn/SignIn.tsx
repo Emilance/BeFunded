@@ -9,7 +9,8 @@ const SignIn = () => {
 
   const handleFormLogin = (e: any) => {
     e.preventDefault();
-    navigate('/verify')
+    // navigate('/verify')
+    navigate('/dashboard')
   }
   return (
     <div className='signIn'>

@@ -19,6 +19,7 @@ import SettingPage from './Pages/EDashboard/SettingPage/SettingPage';
 import ProductPage from './Pages/EDashboard/ProductPage/ProductPage';
 import EMainPage from './Pages/EDashboard/EMainPage/EMainPage';
 import ProductReg from './Pages/EDashboard/ProductReg/ProductReg';
+import ProductReg2 from './Pages/EDashboard/ProductReg/ProductReg2';
 
 
 function App() {
@@ -38,7 +39,9 @@ function App() {
           <Route path='media' element={<MediaPage />}/>
           <Route path='settings' element={<SettingPage />}/>
           <Route path='products' element={<ProductPage />}/>
-          <Route path='productsreg' element={<ProductReg />}/>
+          <Route path='productsreg' element={<ProductReg />} />
+          <Route path='productsreg2' element={<ProductReg2 />} />
+
         </Route>
       </Routes>
      
