@@ -1,7 +1,7 @@
 import React from 'react';
 import './Verify.css';
 import BefundedLogo from '../../assets/BeFunded.svg';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Verify = () => {
   const navigate = useNavigate();
