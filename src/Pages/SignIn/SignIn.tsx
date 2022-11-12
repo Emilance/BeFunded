@@ -58,7 +58,7 @@ const SignIn = () => {
 
   const handleSignUp = (e:React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-   
+    navigate('/dashboard')  
     const validate =handleValidation()
     console.log(validate)
     if(validate){
