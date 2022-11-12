@@ -21,6 +21,35 @@
     justify-content: space-between;
 }
 
+.left{
+    flex: 1;
+    padding: 2rem;
+}
+
+
+.right{
+    flex: 1;
+    padding: 2rem;
+    display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     gap:1rem;
+     align-items: center;
+}
+
+.left> h3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    margin: 1rem;
+    line-height: 28px;
+    color: #020512;
+}
+
+.left> p{
+    margin: 1rem;
+    width: 90%;
+    display: flex;
+}
 .left >p{
     color: #565560;
     width: 50%;

@@ -1,19 +1,96 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../../component/header/Header';
 import './Signup.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai'
+import axios from "axios"
+import { setToken, setUser } from '../../auth';
 
+type errorType={
+    name : null | string,
+    email: null | string, 
+    password:null |string
+
+}
 const Signup = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [role, setRole]  = useState("investor")
+  const [forminput, setForminput]  = useState({name :"", email:"", password:""})
+  const [errors, setErrors] = useState<errorType>({name :null, email:null, password:""})
+  
+  const handleValidation =() => {
+    let formIsValid = true;
 
-  const handleSignUp = (e: any) => {
-    e.preventDefault();
+    //Namess
+    if (!forminput["name"] ) {
+      formIsValid = false;
+      setErrors({...errors ,  name: "Cannot be empty"});
+    }
+    
+ 
+      if (!forminput["name"].match(/^[a-zA-Z]+$/)) {
+        formIsValid = false;
+        setErrors({...errors, name:"Cannot be a number"  });
+      }
+    
 
-    navigate('/verify');
+    //Email
+    if (!forminput["email"]) {
+      formIsValid = false;
+      setErrors({...errors, email:"Cannot be empty"  });
+    } 
+    if (typeof forminput["email"] !== "undefined") {
+      let lastAtPos = forminput["email"].lastIndexOf("@");
+      let lastDotPos = forminput["email"].lastIndexOf(".");
+
+      if (
+        !(
+          lastAtPos < lastDotPos &&
+          lastAtPos > 0 &&
+          forminput["email"].indexOf("@@") == -1 &&
+          lastDotPos > 2 &&
+          forminput["email"].length - lastDotPos > 2
+        )
+      ) {
+        formIsValid = false;
+        setErrors({...errors, email:"Email is not valid" }) ;
+      }
+    }
+    console.log(forminput["password"].length)
+    if (forminput["password"].length < 8) {
+      formIsValid = false;
+      setErrors({...errors ,  password: "password is too short"});
+    }
+
+    return formIsValid;
   }
 
+  useEffect(()=>{
+    handleValidation()
+  }, [])
+  
+  const handleSignUp = (e:React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+   
+    const validate =handleValidation()
+    console.log(validate)
+    if(validate){
+
+      axios.post("https://befunded.herokuapp.com/signup", {...forminput, role } ).then(res => {
+        console.log(res)
+        const resp = res.data
+        setUser(resp.user)
+        setToken(resp.token)
+        navigate('/verify');
+      }).catch(err =>{
+        console.log(err)
+      })
+    }else{
+      console.log(errors)
+    }
+  }
+  
   return (
     <div className='signUp'>
       <Header />
@@ -22,23 +99,25 @@ const Signup = () => {
         <h1 className='signUp__header'>Create Account</h1>
 
         <div className="signUp__option">
-          <div className='signUp__optionButton'>
+          <div onClick={()=> setRole("enterpreneur")} className={role =="enterpreneur" ? 'signUp__optionButton  SO_active' : "signUp__optionButton"}>
             <h3>Enterpreneur</h3>
             <small>Get Funded for Your Ideas</small>
           </div>
 
-          <div className='signUp__optionButton'>
+          <div onClick={()=> setRole("investor")} className={role =="investor" ? 'signUp__optionButton  SO_active' : "signUp__optionButton"}>
             <h3>Investors</h3>
             <small>Fund Amazing Ideas and get equity</small>
           </div>
         </div>
-
+      
         <form className='signUp__form' onSubmit={handleSignUp}>
           <div className="signUp__formInput">
             <label htmlFor="name">Name</label>
             <input 
               type="text" 
               placeholder='Name'
+              value={forminput.name}
+              onChange={(e) => setForminput({...forminput, name: e.target.value})}
             />
           </div>
 
@@ -47,7 +126,8 @@ const Signup = () => {
             <input 
               type="email" 
               placeholder='Personal or Business Address'
-            />
+              value={forminput.email}
+              onChange={(e) => setForminput({...forminput, email: e.target.value})}          />
           </div>
 
           <div className="signUp__formInput signUp__password">
@@ -55,7 +135,9 @@ const Signup = () => {
             <input 
               type={showPassword ? "text" : "password"} 
               placeholder='********'
-            />
+              minLength={8}
+              value={forminput.password}
+              onChange={(e) => setForminput({...forminput, password: e.target.value})}            />
             {
               showPassword ? 
                 <AiOutlineEye className='signUp__passwordIcon' onClick={() =>setShowPassword(!showPassword)}/>  : 

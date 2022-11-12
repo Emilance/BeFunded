@@ -19,20 +19,41 @@ import SettingPage from './Pages/EDashboard/SettingPage/SettingPage';
 import ProductPage from './Pages/EDashboard/ProductPage/ProductPage';
 import EMainPage from './Pages/EDashboard/EMainPage/EMainPage';
 import ProductReg from './Pages/EDashboard/ProductReg/ProductReg';
+
 import ProductReg2 from './Pages/EDashboard/ProductReg/ProductReg2';
 
 
+import  { getUser } from './auth';
+import {useState, useEffect} from "react"
+import { userInfo } from 'os';
+
+
 function App() {
+  const [user, setUser] = useState(null  || {})
+  useEffect(() => {
+    const userInfo =  getUser()
+     setUser({...user, name :userInfo.name,
+       email: userInfo.email, role:userInfo.role,
+       wallet_balance: userInfo.wallet_balance
+      })
+    }, [])
+   
+    const userI =  getUser()
+
   return (
     <div className="app">
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/signUp' element={<Signup />} />
         <Route path='/project' element={<Project />} />
-        <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/verify' element={<Verify />}/>
         <Route path='/login' element={<SignIn/>} />
-        <Route path='/idashboard' element={<Idashboard/>} />
+        {userI.name   ?
+        <Route path='/idashboard' element={<Idashboard  user={user}/>} />
+        :  
+        <Route path='/idashboard' element={   <h1>Loading...... refresh page or log in</h1>} />
+     
+      }
         <Route path='/invest' element={<Invest/>} />
         <Route path='/dashboard' element={< EDashboard/>}>
           <Route path='wallet' element={<WalletPage />}/>
@@ -41,6 +62,7 @@ function App() {
           <Route path='products' element={<ProductPage />}/>
           <Route path='productsreg' element={<ProductReg />} />
           <Route path='productsreg2' element={<ProductReg2 />} />
+          <Route path='productsreg' element={<ProductReg />}/>
 
         </Route>
       </Routes>

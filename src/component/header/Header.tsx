@@ -1,5 +1,9 @@
 import "./header.css"
 import { Link, useNavigate } from 'react-router-dom'
+import {AiOutlineDown} from "react-icons/ai"
+import {useEffect} from "react"
+import { getUser } from "../../auth"
+import ProfileBar from "../../Pages/Investors/Dashboard/DashboardHeader"
 
 const Header = () => {
 
@@ -13,8 +17,12 @@ const Header = () => {
         navigate('/signup')
     }
     
+      const  user = getUser()
+    
+    
     return ( 
         <div className="header">
+          
             <h1 className="title">Be<span>Funded</span></h1>
             <nav className="navBar">
                 <ul >
@@ -32,6 +40,11 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
+            {user.name ?
+                     
+                <ProfileBar user={user} />
+         :
+        
             <div className="btncontainer">
                 <button className="btn" onClick={handleLogin}>
                     Login
@@ -40,6 +53,9 @@ const Header = () => {
                     Register
                 </button>
             </div>
+            
+        }
+   
         </div>
      );
 }
