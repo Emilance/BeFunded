@@ -28,10 +28,11 @@
     padding: 18px 0 18px 16px;
     cursor: pointer;
 }
-
-.eDashboard__page:hover{
+.eDashboard_page_active{
     background:  #EDEFFD;
 }
+
+
 
 .eDashboard__page > img{
     margin-right: 1rem;

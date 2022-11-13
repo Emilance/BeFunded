@@ -48,23 +48,21 @@ function App() {
         <Route path='/project' element={<Project />} />
         <Route path='/verify' element={<Verify />}/>
         <Route path='/login' element={<SignIn/>} />
-        {userI.name   ?
-        <Route path='/idashboard' element={<Idashboard  user={user}/>} />
+        {userI.name   ? 
+        <Route path='/idashboard' element={userI.role == "investor" ?
+        <Idashboard  user={user}/>   :  <EDashboard user={user}/>} />
         :  
-        <Route path='/idashboard' element={   <h1>Loading...... refresh page or log in</h1>} />
-     
+        <Route path='/idashboard' element={   <h1>Loading...... refresh page or log in</h1>} />    
       }
-        <Route path='/invest' element={<Invest/>} />
-        <Route path='/dashboard' element={< EDashboard/>}>
+        {/* <Route path='/invest' element={<Invest/>} />
           <Route path='wallet' element={<WalletPage />}/>
           <Route path='media' element={<MediaPage />}/>
           <Route path='settings' element={<SettingPage />}/>
-          <Route path='products' element={<ProductPage />}/>
-          <Route path='productsreg' element={<ProductReg />} />
+          <Route path='products' element={<ProductPage />}/> */}
+          <Route path='/productsreg' element={<ProductReg />} />
           <Route path='productsreg2' element={<ProductReg2 />} />
           <Route path='productsreg' element={<ProductReg />}/>
 
-        </Route>
       </Routes>
      
     </div>

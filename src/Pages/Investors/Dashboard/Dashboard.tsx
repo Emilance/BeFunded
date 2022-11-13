@@ -26,11 +26,7 @@ const Idashboard = ({user}: any) => {
     const tabClick =(key: string)=>{
         setActive(key)
     }
-    const opendd = <AiOutlineLeft onClick={() => setHeaderDropDown(!headerDropdown)} size="1.2rem" className="picon" />
-
-
-    const closedd = <AiOutlineDown onClick={() => setHeaderDropDown(!headerDropdown)} size="1.2rem" className="picon" />
-
+    
     return ( 
         <div className="idash">
             <div className="dsidebar">
@@ -58,7 +54,7 @@ const Idashboard = ({user}: any) => {
             </div>
             <div className="dash">
                 <div className="dheader">
-                   <ProfileBar   user={user}s/>
+                   <ProfileBar   user={user}/>
                 </div>
                 {active =="wallet" &&
                 <Wallet  user={user}/>   
