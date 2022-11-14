@@ -26,6 +26,7 @@ import ProductReg2 from './Pages/EDashboard/ProductReg/ProductReg2';
 import  { getUser } from './auth';
 import {useState, useEffect} from "react"
 import { userInfo } from 'os';
+import RegistrationSteps from './Pages/Investors/Registration/RegistrationSteps';
 
 
 function App() {
@@ -53,7 +54,8 @@ function App() {
         <Idashboard  user={user}/>   :  <EDashboard user={user}/>} />
         :  
         <Route path='/idashboard' element={   <h1>Loading...... refresh page or log in</h1>} />    
-      }
+      } 
+      <Route path="/iregistration"   element={<RegistrationSteps/>}/>
         {/* <Route path='/invest' element={<Invest/>} />
           <Route path='wallet' element={<WalletPage />}/>
           <Route path='media' element={<MediaPage />}/>
@@ -62,7 +64,6 @@ function App() {
           <Route path='/productsreg' element={<ProductReg />} />
           <Route path='productsreg2' element={<ProductReg2 />} />
           <Route path='productsreg' element={<ProductReg />}/>
-
       </Routes>
      
     </div>

@@ -1,0 +1,167 @@
+.title{
+    color: #020512;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: start;
+
+}
+
+
+.title> span {
+    color: #132CAD;
+ 
+}
+
+.reg_header{
+    height: 3.5rem;
+    display: flex;
+    padding:1rem 3rem;
+ 
+
+}
+.form1 {
+    width: 30rem;
+    margin: auto;
+}
+.reg_steps > h1 {
+    margin: auto;
+    width: 30rem;
+    text-align: center;
+    font-weight: 700;
+    color:  #303030;
+}
+
+.reg_steps > p {
+    margin:1rem auto;
+    width: 30rem;
+    font-weight: 400;
+    color:#303030;
+    text-align: center;
+}
+
+.reg_steps > h4{
+    font-weight: 600;
+    color:#82808F ;
+    width: 30rem;
+    margin:2.5rem auto;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.form1 > h2 {
+    font-weight: 500;
+    color: #2B2A30;
+    font-size: 1.3rem;
+}
+.form1 >button, .form3 > button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem  ; 
+    width: 98%;
+    height: 3rem;
+    margin-top: 1.2rem;   
+    color: #FFFFFF;
+    border: none;
+    background: #132CAD;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.form3{
+    width: 30rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:0.7rem;
+}
+.form3 > button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem  ; 
+    width: 98%;
+    height: 3rem;
+    margin-top: 1.2rem;   
+    color: #FFFFFF;
+    border: none;
+    background: #132CAD;
+    border-radius: 8px;
+    cursor: pointer;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.selecttab{
+    display: flex;
+    padding: 1rem;
+}
+.selecttab:hover{
+    background: #EDEFFD;
+}
+.emailVerified{
+    padding: 1.2rem 0.4rem;
+    color: #166534;
+    background-color: #F0FDF4;
+    position: absolute;
+    width: 15rem;
+    text-align: center;
+    top:6rem;
+    right: 3%;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5rem;
+
+}
+
+
+.label > h3{
+    color: #232323;
+    font-weight: 600;
+}
+
+.label >p{
+    color: #545454;
+    font-weight: 400;
+}
+
+.field > input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1rem  ; 
+    width: 90%;
+    height: 1.7rem;
+    margin-top: 0.5rem;
+    outline : none;   
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.field >label {
+    color: #303030;
+    font-weight: 500;
+}
+.field  {
+    margin-bottom: 0.6rem;
+}
+
+
+.categoryBox{
+    height: 6rem;
+    width: 89%;
+   background-color: #EDEFFD;
+   color: #2B2A30;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+    
+}
