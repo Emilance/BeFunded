@@ -26,6 +26,9 @@ import ProductReg2 from './Pages/EDashboard/ProductReg/ProductReg2';
 import  { getUser } from './auth';
 import {useState, useEffect} from "react"
 import { userInfo } from 'os';
+import NotFound from './Pages/NotFound/NotFound';
+import ProductReg3 from './Pages/EDashboard/ProductReg/ProductReg3';
+import ProductReg4 from './Pages/EDashboard/ProductReg/ProductReg4';
 
 
 function App() {
@@ -53,7 +56,7 @@ function App() {
         :  
         <Route path='/idashboard' element={   <h1>Loading...... refresh page or log in</h1>} />
      
-      }
+        }
         <Route path='/invest' element={<Invest/>} />
         <Route path='/dashboard' element={< EDashboard/>}>
           <Route path='wallet' element={<WalletPage />}/>
@@ -63,8 +66,11 @@ function App() {
           <Route path='productsreg' element={<ProductReg />} />
           <Route path='productsreg2' element={<ProductReg2 />} />
           <Route path='productsreg' element={<ProductReg />}/>
+          <Route path='productsreg3' element={<ProductReg3 />}/>
+          <Route path='productsreg4' element={<ProductReg4 />}/>
 
         </Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
      
     </div>

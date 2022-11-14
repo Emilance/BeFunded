@@ -29,13 +29,14 @@
 
 @media screen and (max-width:830px) {
     .signUp__option{
-        display: none;
+        /* display: none; */
     }
 }
 
 .signUp__option > div{
     /* border: 1px solid red; */
-    width: 400px;
+    /* width: 400px; */
+    max-width: 25rem;
     height: 105px;
     display: flex;
     flex-direction: column;
@@ -43,6 +44,12 @@
     justify-content: center;
     border-radius: 8px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 830px) {
+    .signUp__option > div{
+        /* width: 250px; */
+    }
 }
 
 .signUp__option > div:first-child{
@@ -74,11 +81,13 @@
 
 .signUp__form{
     /* border: 5px solid red; */
-    /* width: 45%; */
-    /* width: 569px; */
-    /* width: 100%; */
+    min-width: 35%;
 }
 
+@media screen and (max-width: 600px) {
+    .signUp__form{
+    }
+}
 
 
 .signUp__form > *{
@@ -88,14 +97,14 @@
 
 .signUp__formInput > *{
     display: block;
-    width: 100%;
+    /* width: 97%; */
 }
 
 @media screen and (max-width: 600px) {
-    .signUp__formInput > *{
+    /* .signUp__formInput > *{
         width: 70%;
         margin-inline: auto;
-    }
+    } */
 }
 
 /* Password */
@@ -115,8 +124,6 @@
 }
 
 .signUp__formInput{
-    /* border: 1px solid green; */
-    width: 590px;
 }
 
 .signUp__formInput > label{
@@ -129,13 +136,14 @@
 }
 
 .signUp__formInput > input{
-    /* width: 100%; */
+    width: 97%;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     padding: 20px 0;
     padding-left: 1rem;
     font-size: 18px;
+    /* border: 1px solid red; */
 }
 
 /* @media screen and (max-width: 500px) {
@@ -166,12 +174,19 @@
     color: #FFFFFF;
     border: none;
     cursor: pointer;
+    /* border: 1px solid red; */
 }
 
 @media screen and (max-width: 600px) {
     .signUp__formButton{
         width: 70%;
         margin-left: 90px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .signUp__formButton{
+        margin-left: 0;
     }
 }
 
@@ -202,5 +217,11 @@
         width: 70%;
         /* margin-inline: auto; */
         margin-left: 90px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .signUp__google{
+        margin-left: 0px;
     }
 }
