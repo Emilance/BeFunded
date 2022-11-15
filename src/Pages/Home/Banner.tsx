@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { getUser } from "../../auth";
 import "./banner.css"
 
@@ -15,12 +16,17 @@ const Banner = () => {
           {!user.name    &&   
           
              <div className="btnContainer">
+                <Link to="/signup">
                 <button  className="btn primary-btn">
                     Register
                 </button>
+                </Link>
+                <Link to="/login">
                 <button className="btn">
-                    Logins
+                    Login
                 </button>
+                </Link>
+                    
             </div>
           } 
         </div>

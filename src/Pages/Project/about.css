@@ -71,6 +71,9 @@
     .aleft{
         padding: 1rem;
     }
+    .aleft >p {
+        margin: 1rem 0;
+    }
     .aboutp{
         flex-direction: column;
     }

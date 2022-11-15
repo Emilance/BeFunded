@@ -52,4 +52,9 @@
     .invest > p{
         width: 90%;
     }
+    
+    .invest{
+        margin-left: 0;
+        height: 15rem;
+    }
 }

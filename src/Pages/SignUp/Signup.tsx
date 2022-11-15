@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai'
 import axios from "axios"
 import { setToken, setUser } from '../../auth';
+import LogHeader from '../../component/LogHeader';
 
 type errorType={
     name : null | string,
@@ -92,26 +93,26 @@ const Signup = () => {
   }
   
   return (
-    <div className='signUp'>
-      <Header />
+    <div className='signIn'>
+     <LogHeader/>
 
-      <div className="signUp__container">
-        <h1 className='signUp__header'>Create Account</h1>
+      <div className="signIn__container">
+        <h1 className='signIn__header'>Create Account</h1>
 
-        <div className="signUp__option">
-          <div onClick={()=> setRole("enterpreneur")} className={role =="enterpreneur" ? 'signUp__optionButton  SO_active' : "signUp__optionButton"}>
+        <div className="signIn__option">
+          <div onClick={()=> setRole("enterpreneur")} className={role =="enterpreneur" ? 'signIn__optionButton  SO_active' : "signIn__optionButton"}>
             <h3>Enterpreneur</h3>
-            <small>Get Funded for Your Ideas</small>
+            <p>Get Funded for Your Ideas</p>
           </div>
 
-          <div onClick={()=> setRole("investor")} className={role =="investor" ? 'signUp__optionButton  SO_active' : "signUp__optionButton"}>
+          <div onClick={()=> setRole("investor")} className={role =="investor" ? 'signIn__optionButton  SO_active' : "signIn__optionButton"}>
             <h3>Investors</h3>
-            <small>Fund Amazing Ideas and get equity</small>
+            <p>Fund Amazing Ideas and get equity</p>
           </div>
         </div>
       
-        <form className='signUp__form' onSubmit={handleSignUp}>
-          <div className="signUp__formInput">
+        <form className='signIn__form' onSubmit={handleSignUp}>
+          <div className="form_field">
             <label htmlFor="name">Name</label>
             <input 
               type="text" 
@@ -121,7 +122,7 @@ const Signup = () => {
             />
           </div>
 
-          <div className="signUp__formInput">
+          <div className="form_field">
             <label htmlFor="email">Email Address</label>
             <input 
               type="email" 
@@ -130,7 +131,7 @@ const Signup = () => {
               onChange={(e) => setForminput({...forminput, email: e.target.value})}          />
           </div>
 
-          <div className="signUp__formInput signUp__password">
+          <div className="form_field signUp__password">
             <label htmlFor="password">Password</label>
             <input 
               type={showPassword ? "text" : "password"} 
@@ -145,13 +146,13 @@ const Signup = () => {
             }
           </div>
 
-          <button className='signUp__formButton'>Create Account</button>
+          <button className='signIn__formButton'>Create Account</button>
 
-          <div className="signUp__question">
+          <div className="signIn__question">
             <p>Already have an account? <Link to={'/login'} style={{ textDecoration: "none", fontWeight: "bold", color: "#132CAD"}}>Log in</Link> </p>
           </div>
 
-          <button className="signUp__google">Sign up with Google</button>
+          <button className="signIn__google">Sign up with Google</button>
         </form>
       </div>
     </div>

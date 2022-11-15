@@ -36,7 +36,9 @@
 
 @media (max-width: 700px) {
     .lower{
-        width: 78vw;
+        width: 90vw;
+        padding: 0.5rem;
+        box-shadow: none;
     }
     .featured{
         width: 98%;
@@ -47,4 +49,24 @@
         margin: 0 0.3rem;
       
     }
+    .lower > .featured >  .projectCon{
+        flex-direction: column;
+        width: 90vw;
+        margin: 0;
+    }
+    .lower > .featured >  .projectCon> .pcard >.cdetail{
+        height: 12rem;
+    }
+    .lower > .featured >  .projectCon> .pcard > img{
+        height: 13rem;
+    }
+    .lower > .featured >  .projectCon> .pcard{
+        width: 18rem;
+        height: 25rem;
+        
+    }
+    .lower> .arrow {
+        display: none;
+    }
+
 }

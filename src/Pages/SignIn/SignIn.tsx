@@ -4,6 +4,7 @@ import BefundedLogo from '../../assets/BeFunded.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { setToken, setUser } from '../../auth';
+import LogHeader from '../../component/LogHeader';
 type errorType={
   email: null | string, 
   password:null |string
@@ -79,28 +80,26 @@ const SignIn = () => {
   return (
     <div className='signIn'>
 
-      <div className="signIn__logo">
-        <img src={BefundedLogo} alt="befunded" />
-      </div>
+          <LogHeader/>
 
       <div className="signIn__container">
         <h1 className="signIn__header">Log in</h1>
 
 
         <div className="signIn__option">
-        <div onClick={()=> setRole("enterpreneur")} className={role =="enterpreneur" ? 'signUp__optionButton  SO_active' : "signUp__optionButton"}>
+        <div onClick={()=> setRole("enterpreneur")} className={role =="enterpreneur" ? 'signIn__optionButton  SO_active' : "signIn__optionButton"}>
             <h3>Enterpreneur</h3>
-            <small>Get Funded for Your Ideas</small>
+            <p>Get Funded for Your Ideas</p>
           </div>
 
-          <div onClick={()=> setRole("investor")} className={role =="investor" ? 'signUp__optionButton  SO_active' : "signUp__optionButton"}>
+          <div onClick={()=> setRole("investor")} className={role =="investor" ? 'signIn__optionButton  SO_active' : "signIn__optionButton"}>
             <h3>Investors</h3>
-            <small>Fund Amazing Ideas and get equity</small>
+            <p>Fund Amazing Ideas and get equity</p>
           </div>
         </div>
 
         <form className="signIn__form" onSubmit={handleSignUp}>
-          <div className="signIn__formDiv">
+          <div className="form_field">
             <label htmlFor="email">Email Address</label>
             <input type="text"
              placeholder='Personal or business email address'
@@ -108,7 +107,7 @@ const SignIn = () => {
              />
           </div>
 
-          <div className="signIn__formDiv">
+          <div className="form_field">
             <label htmlFor="password">Password</label>
             <input type="password" placeholder='******'
               onChange={(e ) => setForminput({...forminput, password : e.target.value})}
