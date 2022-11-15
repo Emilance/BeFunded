@@ -7,6 +7,7 @@ const ProductReg = () => {
 
   return (
     <div className="productReg">
+        <p className="productReg__back" onClick={() => navigate(-1)}>back</p>
         <h1 className="productReg__heading">List Your Product</h1>
         <p className="productReg__motto">Ready to get Funded, Enter your Product Information</p>
 
