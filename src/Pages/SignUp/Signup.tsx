@@ -94,7 +94,7 @@ const Signup = () => {
   
   return (
     <div className='signIn'>
-     <LogHeader/>
+     <Header/>
 
       <div className="signIn__container">
         <h1 className='signIn__header'>Create Account</h1>

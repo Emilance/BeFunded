@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { setToken, setUser } from '../../auth';
 import LogHeader from '../../component/LogHeader';
+import Header from '../../component/header/Header';
 type errorType={
   email: null | string, 
   password:null |string
@@ -80,7 +81,7 @@ const SignIn = () => {
   return (
     <div className='signIn'>
 
-          <LogHeader/>
+        <Header/>
 
       <div className="signIn__container">
         <h1 className="signIn__header">Log in</h1>

@@ -4,7 +4,9 @@
     align-items: center;
     padding-left: 2rem;
 }
-
+.wallet{
+    width: 100vw;
+}
 .welcome > h1{
     font-family: 'Inter';
     font-style: normal;
@@ -252,4 +254,24 @@
 
 .tabs_FW_active{
     background-color: #EDEFFD;
+}
+
+@media (max-width: 700px ) {
+    .walleta{
+        margin-left: 0;
+    }
+    .right >button {
+        width: 7rem;
+       
+    }
+    .left >p{
+        width: 90%;
+    }
+    .investedproject{
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+    .ipdetails >p{
+        width: 70%;
+    }
 }

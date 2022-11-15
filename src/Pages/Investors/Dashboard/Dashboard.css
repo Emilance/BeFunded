@@ -112,14 +112,27 @@
     margin-right: 0.5rem;
     color: #565560;
 }
-
+.dash > .onlymobile {
+    display: none;
+}
+.dashheader{
+    display: none;
+}
+.mobileNav{
+    position: absolute;
+    z-index: 100;
+}
 
 @media (max-width: 700px) {
+    .dash > .onlymobile {
+        display: flex;
+    }
     .dsidebar{
         display: none;
     }
     .dheader{
         padding: 0 1rem;
+        display: none;
     }
     .profilebar > a> img{
         width: 1.5rem;
@@ -127,5 +140,12 @@
     }
     .profilebar> p{
         font-size: 1rem;
+        display: none;
+    }
+    .dashheader{
+        display: flex;
+        justify-content: space-between;
+        padding: 0.7rem;
+        margin-bottom: 1rem;
     }
 }
