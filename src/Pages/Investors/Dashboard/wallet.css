@@ -147,3 +147,92 @@
 .topde > p> span {
     color: #132CAD;
 }
+
+.fundWallet {
+    display:flex;
+    border-top: 1px solid  #EDEFFD;
+    padding-top: 1rem;
+
+}
+
+.sidebar_FW{
+    flex:0.4;
+    border-right: 1px solid #565560;
+}
+.sidebar_FW > h2 {
+    font-weight: 600;
+    color: #000000;
+    margin: 1.4rem auto;
+    text-align: center;
+}
+
+.tabs_FW {
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    margin: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+.FW_main{
+    flex:1;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fundfield {
+     width: 60%;
+     margin: auto;
+}
+
+.fundfield > input {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.fundfield > label {
+    font-weight: 600;
+    color: #000000;
+    font-size: 1.3rem;
+}
+.doublefields {
+    display:flex;
+    width: 60%;
+    margin: auto;
+ 
+}
+
+.doublefields > .fundfield {
+    width: 46%;
+   margin: 0;
+
+}
+
+.doublefields >.fundfield  > input{
+    margin:  0;
+
+}
+
+.doublefields > .m{
+    margin-left: 1rem;
+}
+.FW_main > button {
+    height: 3rem;
+    width:  59%;
+    padding: 0;
+    margin: 1.3rem ;
+    margin-top: 2rem;
+    background-color: #132CAD;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 600;
+}
+
+.tabs_FW_active{
+    background-color: #EDEFFD;
+}

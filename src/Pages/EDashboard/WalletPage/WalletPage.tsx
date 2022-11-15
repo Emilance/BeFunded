@@ -1,7 +1,7 @@
 import React from 'react'
 import './WalletPage.css';
 
-const WalletPage = () => {
+const WalletPage = ({user}: any) => {
   return (
     <div className="walletPage">
       <h3 className="walletPage__header">Wallet</h3>
@@ -12,7 +12,7 @@ const WalletPage = () => {
         <div className="walletLeft__details">
           <p className='walletLeft__totalText'>Total Raised</p>
 
-          <h1 className="wallet__funds">$0.00</h1>
+          <h1 className="wallet__funds">${user.wallet_balance}</h1>
 
           <p className="walletFund__details">Amount raised from open campaigns</p>
         </div>

@@ -58,7 +58,7 @@ const SignIn = () => {
 
   const handleSignUp = (e:React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate('/dashboard')  
+    
     const validate =handleValidation()
     console.log(validate)
     if(validate){
@@ -68,8 +68,7 @@ const SignIn = () => {
         const resp = res.data
         setUser(resp.user)
         setToken(resp.token)
-        if(role == "investor") navigate('/idashboard');
-        if(role == "enterpreneur") navigate('/dashboard')
+       navigate('/idashboard');
       }).catch(err =>{
         console.log(err)
       })
