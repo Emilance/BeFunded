@@ -1,5 +1,7 @@
 import { useState } from "react";
+import FundWallet from "./FundWallet";
 import "./wallet.css"
+import WithdrawFund from "./WithdrawFund";
 const Wallet = ({user}:any) => {
     const [fund, setFund] = useState<string>("wallet")
     return ( 
@@ -19,7 +21,7 @@ const Wallet = ({user}:any) => {
                 <div className="right">
                     <h4>3 Investment</h4>
                     <button  onClick={()=>setFund("fund")}>Fund</button>
-                    <button>withdraw</button>
+                    <button onClick={()=>setFund("withdraw")}>withdraw</button>
                 </div>
             </div> 
             <h2>Funded Project</h2>
@@ -57,54 +59,13 @@ const Wallet = ({user}:any) => {
 
      {fund == "fund"
      &&
-     <>
-     <div className="welcome">
-                <h1>Fund</h1>
-            </div>
-          <div className="fundWallet">
-                <div className="sidebar_FW ">
-                    <h2>Payment Method</h2>
-                    <div className="tabs_FW  tabs_FW_active">
-                        Card Payment
-                    </div>
-                    <div className="tabs_FW">
-                         Bank Account
-                    </div>
-                    <div className="tabs_FW">
-                      USSD Payment
-                    </div>
-                    <div className="tabs_FW">
-                       Mobile Bank
-                    </div>           
-                </div>
-                <div className="FW_main">
+     <FundWallet/>
+     }
 
-                <div className="field fundfield">
-                        <label>Enter Card Number</label>
-                        <input  type="text"  placeholder="$50 000"/>            
-               </div>
-                <div className="field fundfield">
-                        <label>Card Holder Name</label>
-                        <input  type="text"  placeholder="$50 000"/>            
-                </div> 
-                <div className="field fundfield">
-                        <label>Amount</label>
-                        <input  type="text"  placeholder="$50 000"/>            
-                </div>
-                <div className="doublefields">
-                <div className="field fundfield">
-                        <label>Expiry</label>
-                        <input  type="text"  placeholder="$50 000"/>            
-                </div>
-                <div className="field fundfield m">
-                        <label>CVV</label>
-                        <input  type="text"  placeholder="$50 000"/>            
-                </div>
-                </div>
-                <button>Proceed Payments</button>
-                </div>
-            </div>
-     </>
+     {fund == "withdraw"
+     
+     && 
+        <WithdrawFund/>
      }
 
 
