@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.notFound{
+    /* border: 1px solid red; */
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+.notFound__header{
+    padding: 2.7rem 0 0 6rem;
+}
+
+.notFound__container{
+    display: grid;
+    place-items: center;
+    /* border: 1px solid purple; */
+}
+
+.notFound__container > img{
+    margin-bottom: 1.4rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.notFound__container > .notFound__text{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: #303030;
+}
+
+.notFound__button{
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    background: #132CAD;
+    border-radius: 8px;
+    width: 35%;
+    padding: 1.25rem;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    border: none;
+    cursor: pointer;
+}
+
+.notFound__getHelp{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #303030;
+    margin-bottom: 30px;
+}

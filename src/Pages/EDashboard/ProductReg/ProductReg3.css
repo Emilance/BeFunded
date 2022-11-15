@@ -1,0 +1,110 @@
+.productReg3{
+    /* border: 2px solid purple; */
+    min-height: calc(100vh - 97px);
+    /* text-align: center; */
+    font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+.productReg3__back{
+    position: absolute;
+    top: 30px;
+    left: 140px;
+    cursor: pointer;
+}
+
+.productReg3__heading{
+    /* border: 1px solid red; */
+    margin-top: 96px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: #303030;
+}
+
+.productReg3__motto{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #303030;
+    margin: 13px 0 34px;
+
+}
+
+.productReg3__step{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #82808F;
+    margin-bottom: 35px;
+}
+
+
+.productReg3__heading,
+.productReg3__motto,
+.productReg3__step{
+    text-align: center;
+}
+
+.productReg3__form{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.productReg3__inputDiv{
+    margin-bottom: 30px;
+}
+
+.productReg3__inputDiv > *{
+    /* display: flex; */
+    display: block;
+}
+
+.productReg3__inputDiv > label{
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #303030;
+}
+
+.productReg3__inputDiv > input{
+    width: 97.5%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    /* padding: 20px 0px; */
+    padding: 20px 0px 20px 1rem;
+}
+
+.productReg3__inputDiv > select{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px 0px 20px 1rem;
+    width: 100%;
+}
+
+.productReg3__inputDiv > input::placeholder{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #D0D0D5;
+}
+
+.productReg3__nextButton{
+    width: 100%;
+    /* height: 68px; */
+    padding: 20px 0;
+    background: #132CAD;
+    border-radius: 8px;
+    /* font-family: 'Inter'; */
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 60px;
+    margin-top: 2.25rem;
+    text-align:center;
+}

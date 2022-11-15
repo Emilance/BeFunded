@@ -5,6 +5,14 @@
     min-height: calc(100vh - 97px);
     /* text-align: center; */
     font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+.productReg__back{
+    position: absolute;
+    top: 30px;
+    left: 140px;
+    cursor: pointer;
 }
 
 /* checkbox input div */
@@ -31,6 +39,7 @@ input:checked{
 }
 
 .productReg__heading{
+    /* border: 1px solid red; */
     margin-top: 96px;
     font-weight: 700;
     font-size: 32px;
