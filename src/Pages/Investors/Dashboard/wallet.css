@@ -186,6 +186,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: fit-content;
 }
 
 .fundfield {
@@ -220,13 +221,13 @@
 }
 .doublefields {
     display:flex;
-    width: 60%;
-    margin: auto;
+    width: 90%;
+  
  
 }
 
 .doublefields > .fundfield {
-    width: 46%;
+    width: 44%;
    margin: 0;
 
 }
@@ -237,13 +238,13 @@
 }
 
 .doublefields > .m{
-    margin-left: 1rem;
+    margin-left: 2.5rem;
 }
 .FW_main > button {
     height: 3rem;
-    width:  59%;
+    width:  87%;
     padding: 0;
-    margin: 1.3rem ;
+    margin: 1.3rem auto ;
     margin-top: 2rem;
     background-color: #132CAD;
     color: #ffffff;
@@ -273,5 +274,15 @@
     }
     .ipdetails >p{
         width: 70%;
+    }
+    .sidebar_FW{
+        display: none;
+    }
+    .doublefields > .fundfield {
+        width: 40%;
+    
+    }
+    .FW_main > button {
+       width: 90%;
     }
 }

@@ -2,11 +2,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductReg2.css';
 
-const ProductReg2 = () => {
+const ProductReg2 = ({setRegProduct, product, setProduct}: any) => {
   const navigate = useNavigate()
   return (
     <div className='productReg2'>
-        <p className="productReg2__back" onClick={() => navigate(-1)}>back</p>
+        <div className="backbtn" onClick={() => setRegProduct(1)}>
+
+       <p >Back</p>
+      </div>
         <h1 className="productReg2__heading">List Your Product</h1>
         <p className="productReg2__motto">Ready to get Funded, Enter your Product Information</p>
 
@@ -22,7 +25,11 @@ const ProductReg2 = () => {
         <div className="productReg2__form">
           <div className="productReg2__inputDiv">
             <label htmlFor="video-url">Video Url</label>
-            <input type="text" id='video-url' placeholder='https://'/>
+            <input type="text" id='video-url'
+             placeholder='https://'
+             value={product.video_url}
+             onChange={(e)=> setProduct({...product, video_url: e.target.value})}
+             />
           </div>
 
           <div className="productReg2__videoIframe">
@@ -38,10 +45,13 @@ const ProductReg2 = () => {
           </div>
 
           <div className="uploadImage__iframe">
+            <input type="file" id='file'
+                onChange={(e)=> setProduct({...product, product_image: e.target.value})}
+            />
             <p>Upload Image</p>
           </div>
 
-          <div className="productReg2__nextButton" onClick={() => navigate('/dashboard/productsreg3')}>Next</div>
+          <div className="productReg2__nextButton" onClick={() =>setRegProduct(3)}>Next</div>
         </div>
     </div>
   )

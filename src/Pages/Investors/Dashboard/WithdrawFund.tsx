@@ -4,7 +4,7 @@ const WithdrawFund = () => {
     return ( 
         <>
         <div className="welcome">
-                   <h1>Fund</h1>
+                   <h1>wallet/withdraw</h1>
                </div>
              <div className="fundWallet">
                   

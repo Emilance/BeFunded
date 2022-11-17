@@ -70,7 +70,9 @@
     line-height: 32px;
     color: #232323;
 }
-
+.inputerrors{
+    color: red;
+}
 .signUp__optionButton > small{
     font-family: 'Inter';
     font-weight: 400;

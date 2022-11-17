@@ -43,3 +43,22 @@
     flex: 1;
     /* background: red; */
 }
+
+.edashboardpage {
+    width: 100%;
+    flex:1;
+}
+.edashboardpage > .header{
+    display: none;
+}
+
+
+
+@media (max-width:1000px) {
+    .eDashboard__sidebar{
+        display: none;
+    }
+    .edashboardpage > .header{
+        display: flex;
+    }
+}

@@ -29,10 +29,12 @@ const ProfileBar = ({user}: any) => {
                     {headerDropdown  &&
                     
                     <div className="dropdown">
+                        <Link to="/idashboard">
                         <button>
                             <BsPerson  size="1.5rem" className="dropdown_icon"/>
                            <span>Profile</span> 
                         </button>
+                        </Link>
                         <button>
                             <BiLogOut size="1.5rem" className="dropdown_icon"/>
                            <span>Log Out</span> 

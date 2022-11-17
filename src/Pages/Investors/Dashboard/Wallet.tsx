@@ -62,7 +62,7 @@ const Wallet = ({user}:any) => {
      <FundWallet/>
      }
 
-     {fund == "withdraw"
+     {fund =="withdraw"
      
      && 
         <WithdrawFund/>

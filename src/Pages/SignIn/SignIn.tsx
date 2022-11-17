@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './SignIn.css';
 import BefundedLogo from '../../assets/BeFunded.svg';
 import { Link, useNavigate } from 'react-router-dom';
@@ -16,11 +16,12 @@ const SignIn = () => {
   const navigate = useNavigate();
   const [role, setRole]  = useState("investor")
   const [forminput, setForminput]  = useState({email:"", password:""})
-  const [errors, setErrors] = useState<errorType>({email:null, password:""})
+  const [errors, setErrors] = useState<errorType>({email:null, password:null})
+  const [formIsValid, setFormIsValid] = useState(false)
 
    
   const handleValidation =() => {
-    let formIsValid = true;
+    setFormIsValid(true)
 
  
     
@@ -28,7 +29,7 @@ const SignIn = () => {
    
     //Email
     if (!forminput["email"]) {
-      formIsValid = false;
+      setFormIsValid(false)
       setErrors({...errors, email:"Cannot be empty"  });
     } 
     if (typeof forminput["email"] !== "undefined") {
@@ -44,19 +45,20 @@ const SignIn = () => {
           forminput["email"].length - lastDotPos > 2
         )
       ) {
-        formIsValid = false;
+        setFormIsValid(false)
         setErrors({...errors, email:"Email is not valid" }) ;
       }
     }
     console.log(forminput["password"].length)
     if (forminput["password"].length < 8) {
-      formIsValid = false;
-      setErrors({...errors ,  password: "password is too short"});
+      setFormIsValid(false)
+      setErrors({...errors ,  password: " should be at least 8 char"});
     }
-
     return formIsValid;
   }
- 
+  useEffect(()=>{
+    handleValidation()
+  }, [])
 
   const handleSignUp = (e:React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -102,7 +104,11 @@ const SignIn = () => {
         <form className="signIn__form" onSubmit={handleSignUp}>
           <div className="form_field">
             <label htmlFor="email">Email Address</label>
-            <input type="text"
+            {!formIsValid
+          &&
+            <small  className='inputerrors'>{errors.email}</small>
+          }
+           <input type="text"
              placeholder='Personal or business email address'
              onChange={(e ) => setForminput({...forminput, email : e.target.value})}
              />
@@ -110,13 +116,17 @@ const SignIn = () => {
 
           <div className="form_field">
             <label htmlFor="password">Password</label>
+            {!formIsValid
+          &&
+              <small  className='inputerrors'>{errors.password}</small>
+          }
             <input type="password" placeholder='******'
               onChange={(e ) => setForminput({...forminput, password : e.target.value})}
               />
           </div>
 
 
-          <button className='signIn__formButton'>Log in</button>
+          <button className='signIn__formButton'>{!formIsValid  ? 'Log in' : "Loading ..."}</button>
 
           <div className="signIn__question">
             <p>Don't have an account yet? <Link to={'/signup'} style={{ textDecoration: "none", fontWeight: "bold", color: "#132CAD"}}>Create Account</Link> </p>

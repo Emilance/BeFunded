@@ -15,7 +15,7 @@
 .productHeading{
     /* font-family: 'Inter'; */
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 32px;
     color: #020512;
 }
@@ -31,7 +31,7 @@
 
 .productText__button{
     /* width: 100%; */
-    width: 590px;
+    width: 70%;
     height: 68px;
     background: #132CAD;
     border-radius: 8px;
@@ -43,3 +43,5 @@
     border: none;
     cursor: pointer;
 }
+
+

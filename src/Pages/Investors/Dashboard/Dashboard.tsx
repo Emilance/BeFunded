@@ -68,7 +68,9 @@ const close =<GiHamburgerMenu
 
             <div className="logo  onlymobile">
                {openBugger ? open : close}
-            <h1 className="title">Be<span>Funded</span></h1>
+               <Link to="/">
+                   <h1 className="title">Be<span>Funded</span></h1>
+               </Link>
             </div>
             <ProfileBar user={user} />
             </div>
@@ -78,19 +80,23 @@ const close =<GiHamburgerMenu
             
            <nav className="mobileNav">
                 <>
-                <div  onClick={()=> tabClick("dashboard")} className={active == "dashboard" ? "singlei  singlei-active" : "singlei"}>
+                <div  onClick={()=>{ setOpenBugger(false)
+                             tabClick("dashboard")}} className={active == "dashboard" ? "singlei  singlei-active" : "singlei"}>
                         <BiHomeAlt  className="dicon" size="1rem"/>
                         <p>Dashboard</p>
                     </div>
-                    <div onClick={()=> tabClick("wallet")} className={active == "wallet" ? "singlei  singlei-active" : "singlei"} >
+                    <div onClick={()=>{setOpenBugger(false) 
+                                   tabClick("wallet")}} className={active == "wallet" ? "singlei  singlei-active" : "singlei"} >
                         <BiWallet  className="dicon" size="1rem"/>
                         <p>Wallet</p>
                     </div>
-                    <div onClick={()=> tabClick("faq")} className={active == "faq" ? "singlei  singlei-active" : "singlei"}>
+                    <div onClick={()=> {setOpenBugger(false)
+                                 tabClick("faq")}} className={active == "faq" ? "singlei  singlei-active" : "singlei"}>
                         <FaQuestion  className="dicon" size="1rem"/>
                         <p>FAQ</p>
                     </div>
-                    <div onClick={()=> tabClick("setting")}  className={active == "settings" ? "singlei  singlei-active" : "singlei"}>
+                    <div onClick={()=>{setOpenBugger(false) 
+                    tabClick("setting") }}  className={active == "settings" ? "singlei  singlei-active" : "singlei"}>
                         <FiSettings className="dicon" size="1rem"/>
                         <p>Setting</p>
                     </div>

@@ -18,27 +18,27 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [role, setRole]  = useState("investor")
   const [forminput, setForminput]  = useState({name :"", email:"", password:""})
-  const [errors, setErrors] = useState<errorType>({name :null, email:null, password:""})
-  
+  const [errors, setErrors] = useState<errorType>({name :null, email:null, password:null})
+  const [formIsValid, setFormIsValid] = useState(false)
   const handleValidation =() => {
-    let formIsValid = true;
+    setFormIsValid(true)
 
     //Namess
     if (!forminput["name"] ) {
-      formIsValid = false;
+      setFormIsValid(false)
       setErrors({...errors ,  name: "Cannot be empty"});
     }
     
  
-      if (!forminput["name"].match(/^[a-zA-Z]+$/)) {
-        formIsValid = false;
-        setErrors({...errors, name:"Cannot be a number"  });
-      }
+      // if (!forminput["name"].match(/^[a-zA-Z]+$/)) {
+      //   formIsValid = false;
+      //   setErrors({...errors, name:"Cannot be a number"  });
+      // }
     
 
     //Email
     if (!forminput["email"]) {
-      formIsValid = false;
+      setFormIsValid(false)
       setErrors({...errors, email:"Cannot be empty"  });
     } 
     if (typeof forminput["email"] !== "undefined") {
@@ -54,14 +54,14 @@ const Signup = () => {
           forminput["email"].length - lastDotPos > 2
         )
       ) {
-        formIsValid = false;
+        setFormIsValid(false)
         setErrors({...errors, email:"Email is not valid" }) ;
       }
     }
     console.log(forminput["password"].length)
     if (forminput["password"].length < 8) {
-      formIsValid = false;
-      setErrors({...errors ,  password: "password is too short"});
+      setFormIsValid(false)
+      setErrors({...errors ,  password: " should be at least 8 char"});
     }
 
     return formIsValid;
@@ -94,7 +94,7 @@ const Signup = () => {
   
   return (
     <div className='signIn'>
-     <Header/>
+     <Header/> 
 
       <div className="signIn__container">
         <h1 className='signIn__header'>Create Account</h1>
@@ -114,6 +114,10 @@ const Signup = () => {
         <form className='signIn__form' onSubmit={handleSignUp}>
           <div className="form_field">
             <label htmlFor="name">Name</label>
+          {!formIsValid
+          &&
+            <small  className='inputerrors'>{errors.name}</small>
+            }
             <input 
               type="text" 
               placeholder='Name'
@@ -124,6 +128,10 @@ const Signup = () => {
 
           <div className="form_field">
             <label htmlFor="email">Email Address</label>
+            {!formIsValid
+          &&
+            <small  className='inputerrors'>{errors.email}</small>
+          }
             <input 
               type="email" 
               placeholder='Personal or Business Address'
@@ -133,6 +141,10 @@ const Signup = () => {
 
           <div className="form_field signUp__password">
             <label htmlFor="password">Password</label>
+            {!formIsValid
+          &&
+              <small  className='inputerrors'>{errors.password}</small>
+          }
             <input 
               type={showPassword ? "text" : "password"} 
               placeholder='********'
@@ -146,7 +158,7 @@ const Signup = () => {
             }
           </div>
 
-          <button className='signIn__formButton'>Create Account</button>
+          <button className='signIn__formButton'>{!formIsValid  ? 'Create Account' : "Loading ..."}</button>
 
           <div className="signIn__question">
             <p>Already have an account? <Link to={'/login'} style={{ textDecoration: "none", fontWeight: "bold", color: "#132CAD"}}>Log in</Link> </p>

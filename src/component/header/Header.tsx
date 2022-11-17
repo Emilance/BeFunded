@@ -31,7 +31,9 @@ const Header = () => {
         <div className="header">
             <div className="logo">
                {openBugger ? open : close}
-            <h1 className="title">Be<span>Funded</span></h1>
+               <Link to="/">
+              <h1 className="title">Be<span>Funded</span></h1>
+               </Link>
             </div>
             <nav className="navBar">
                 <ul >

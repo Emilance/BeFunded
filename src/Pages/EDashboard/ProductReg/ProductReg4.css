@@ -117,3 +117,24 @@
 .checkbox-termsAndCondition > span{
     margin-left: 1.25rem;
 }
+
+@media (max-width:800px) {
+    .productReg4__form{
+        width:90%;
+    }
+    .productReg4 > *{
+        text-align: start !important;
+        padding: 1rem;
+    }
+    .productReg4__step{
+        margin-bottom: 0.7rem;
+    }
+    .productReg4__heading{
+     margin-top: 1rem;
+    }
+    .productReg4__motto{
+        margin: 0.5rem 0;
+    
+    }
+
+}

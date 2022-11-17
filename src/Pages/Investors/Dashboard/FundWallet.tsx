@@ -4,7 +4,7 @@ const FundWallet = () => {
     return ( 
         <>
      <div className="welcome">
-                <h1>Fund</h1>
+                <h1>wallet/fund</h1>
             </div>
           <div className="fundWallet">
                 <div className="sidebar_FW ">
@@ -22,7 +22,7 @@ const FundWallet = () => {
                        Mobile Bank
                     </div>           
                 </div>
-                <div className="FW_main">
+                <form className="FW_main">
 
                 <div className="field fundfield">
                         <label>Enter Card Number</label>
@@ -47,7 +47,7 @@ const FundWallet = () => {
                 </div>
                 </div>
                 <button>Proceed Payments</button>
-                </div>
+                </form>
             </div>
      </>
      );

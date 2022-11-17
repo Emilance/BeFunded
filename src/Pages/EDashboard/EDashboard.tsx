@@ -5,13 +5,20 @@ import BeFunded from '../../assets/BeFunded.svg';
 import Dashboard from '../../assets/DashboardLogo.svg';
 import Settings from '../../assets/SettingsLogo.svg';
 import Wallet from '../../assets/WalletLogo1.svg';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import EHeader from '../../component/EHeader/EHeader';
 import ProductPage from './ProductPage/ProductPage';
 import EMainPage from './EMainPage/EMainPage';
 import WalletPage from './WalletPage/WalletPage';
 import MediaPage from './MediaPage/MediaPage';
 import ProfileBar from '../Investors/Dashboard/DashboardHeader';
+// import ProfileBar from "./DashboardHeader";
+import {GiHamburgerMenu}  from "react-icons/gi"
+import {ImCross} from "react-icons/im"
+import {BiHomeAlt, BiWallet}  from "react-icons/bi"
+import {FaQuestion}  from "react-icons/fa"
+import {FiSettings}  from  "react-icons/fi"
+import Header from '../../component/header/Header';
 
 const pagesOptions = [
   {
@@ -50,16 +57,26 @@ const pagesOptions = [
 
 const EDashboard = ({user}: any) => {
   const [active, setActive] = useState<string>("Dashboard")
+  const [openBugger, setOpenBugger] = useState(false)
+
   const tabClick =(key: string)=>{
     setActive(key)
 }
-
-  const navigate = useNavigate();
-
+      const open = <ImCross
+      onClick={()=> setOpenBugger(false)}
+        size="1.5rem" className="bugger" />
+      const close =<GiHamburgerMenu 
+        onClick={()=> setOpenBugger(true)}
+          size="1.7rem" className="bugger" />
+        const navigate = useNavigate();
+ 
   return (
     <div className="eDashboard">
       <div className="eDashboard__sidebar">
+        <Link to="/">
+
         <img src={BeFunded} alt="befunded" className="eDashboard__img" />
+        </Link>
 
         <div className="eDashboard__pages">
           {pagesOptions.map((page, i) => (
@@ -70,17 +87,57 @@ const EDashboard = ({user}: any) => {
           ))}
         </div>
       </div>
+   <div  className='edashboardpage'>
+          <div className="dashheader">
 
+            <div className="logo  onlymobile">
+              {openBugger ? open : close}
+            <h1 className="title">Be<span>Funded</span></h1>
+            </div>
+            <ProfileBar user={user} />
+        </div>
+      {openBugger   &&
+            
+            
+            
+            <nav className="mobileNav">
+                 <>
+                 <div  onClick={()=> tabClick("Dashboard")} className={active == "dashboard" ? "singlei  singlei-active" : "singlei"}>
+                         <BiHomeAlt  className="dicon" size="1rem"/>
+                         <p>Dashboard</p>
+                     </div>
+                     <div onClick={()=> tabClick("Products")} className={active == "wallet" ? "singlei  singlei-active" : "singlei"} >
+                         <BiWallet  className="dicon" size="1rem"/>
+                         <p>Products</p>
+                     </div>
+                     <div onClick={()=> tabClick("Wallet")} className={active == "wallet" ? "singlei  singlei-active" : "singlei"} >
+                         <BiWallet  className="dicon" size="1rem"/>
+                         <p>Wallet</p>
+                     </div>
+                     <div onClick={()=> tabClick("Media")} className={active == "faq" ? "singlei  singlei-active" : "singlei"}>
+                         <FaQuestion  className="dicon" size="1rem"/>
+                         <p>Media</p>
+                     </div>
+                     <div onClick={()=> tabClick("setting")}  className={active == "settings" ? "singlei  singlei-active" : "singlei"}>
+                         <FiSettings className="dicon" size="1rem"/>
+                         <p>Setting</p>
+                     </div>
+                 </>
+                 
+                 
+             </nav>
+             }
       <div className="eDashboard__main">
       <div className="dheader">
                    <ProfileBar   user={user}/>
         </div>
-        {active == "Products"  && <ProductPage/>}
+        {active == "Products"  && <EMainPage/>}
         {active == "Dashboard"  && <EMainPage/>}
         {active == "Wallet"  && <WalletPage  user={user}/>}
         {active == "Media"  && <MediaPage/>}
 
       </div>
+   </div>
     </div>
   )
 }

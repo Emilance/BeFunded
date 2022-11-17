@@ -112,6 +112,9 @@
     align-items: center;
    
 }
+.logo > a {
+    text-decoration: none;
+}
 .bugger{
     display: none;
     cursor: pointer;
@@ -142,6 +145,11 @@
     .header > .title{
         font-size: 1rem;
         margin-left: 1rem;
+    
+    }
+  .title{
+        font-size: 1rem  !important;
+       
     
     }
     .title> span {
