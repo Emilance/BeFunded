@@ -17,18 +17,16 @@ const SignIn = () => {
   const [role, setRole]  = useState("investor")
   const [forminput, setForminput]  = useState({email:"", password:""})
   const [errors, setErrors] = useState<errorType>({email:null, password:null})
-  const [formIsValid, setFormIsValid] = useState(false)
+  const [formIsValid, setFormIsValid] = useState<null | boolean>(null)
+  const [submit, setSubmit]= useState(false)
 
    
-  const handleValidation =() => {
-    setFormIsValid(true)
-
- 
-    
+  const handleValidation = async () => {
+    await setFormIsValid(true) 
  
    
     //Email
-    if (!forminput["email"]) {
+   if (!forminput["email"]) {
       setFormIsValid(false)
       setErrors({...errors, email:"Cannot be empty"  });
     } 
@@ -58,16 +56,17 @@ const SignIn = () => {
   }
   useEffect(()=>{
     handleValidation()
-  }, [])
+  }, [forminput])
 
-  const handleSignUp = (e:React.ChangeEvent<HTMLFormElement>) => {
+  const handleSignUp = async (e:React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    const validate =handleValidation()
+    const validate = await handleValidation()
     console.log(validate)
     if(validate){
 
       axios.post("https://befunded.herokuapp.com/login", {...forminput, role } ).then(res => {
+        setSubmit(true)
         console.log(res)
         const resp = res.data
         setUser(resp.user)
@@ -105,12 +104,13 @@ const SignIn = () => {
           <div className="form_field">
             <label htmlFor="email">Email Address</label>
             {!formIsValid
-          &&
+             &&
             <small  className='inputerrors'>{errors.email}</small>
-          }
+             }
            <input type="text"
              placeholder='Personal or business email address'
-             onChange={(e ) => setForminput({...forminput, email : e.target.value})}
+             value = {forminput.email}
+             onChange={(e) => setForminput({...forminput, email : e.target.value})}
              />
           </div>
 
@@ -121,12 +121,13 @@ const SignIn = () => {
               <small  className='inputerrors'>{errors.password}</small>
           }
             <input type="password" placeholder='******'
+            value={forminput.password}
               onChange={(e ) => setForminput({...forminput, password : e.target.value})}
               />
           </div>
 
 
-          <button className='signIn__formButton'>{!formIsValid  ? 'Log in' : "Loading ..."}</button>
+          <button className='signIn__formButton'>{(formIsValid && submit)  ?  "Loading ..." : 'Log in' }</button>
 
           <div className="signIn__question">
             <p>Don't have an account yet? <Link to={'/signup'} style={{ textDecoration: "none", fontWeight: "bold", color: "#132CAD"}}>Create Account</Link> </p>

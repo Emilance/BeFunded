@@ -1,12 +1,15 @@
 import React from 'react'
 import './ProductReg4.css';
 import { useNavigate } from 'react-router-dom';
+import {MdOutlineKeyboardBackspace}  from "react-icons/md"
+
 
 const ProductReg4 = ({setRegProduct, product, setProduct}: any) => {
     const navigate = useNavigate();
   return (
     <div className='productReg4'>
       <div className="backbtn" onClick={() => setRegProduct(3)}>
+      <MdOutlineKeyboardBackspace  size="1.5rem"/>
         <p >Back</p>
         </div>  
         <h1 className="productReg4__heading">List Your Product</h1>

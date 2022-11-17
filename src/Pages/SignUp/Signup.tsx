@@ -20,6 +20,7 @@ const Signup = () => {
   const [forminput, setForminput]  = useState({name :"", email:"", password:""})
   const [errors, setErrors] = useState<errorType>({name :null, email:null, password:null})
   const [formIsValid, setFormIsValid] = useState(false)
+  const [submit, setSubmit]= useState(false)
   const handleValidation =() => {
     setFormIsValid(true)
 
@@ -69,7 +70,7 @@ const Signup = () => {
 
   useEffect(()=>{
     handleValidation()
-  }, [])
+  }, [forminput])
   
   const handleSignUp = (e:React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -77,8 +78,8 @@ const Signup = () => {
     const validate =handleValidation()
     console.log(validate)
     if(validate){
-
       axios.post("https://befunded.herokuapp.com/signup", {...forminput, role } ).then(res => {
+        setSubmit(true)
         console.log(res)
         const resp = res.data
         setUser(resp.user)
@@ -158,7 +159,7 @@ const Signup = () => {
             }
           </div>
 
-          <button className='signIn__formButton'>{!formIsValid  ? 'Create Account' : "Loading ..."}</button>
+          <button className='signIn__formButton'>{(formIsValid  && submit )  ?"Loading ...": 'Create Account' }</button>
 
           <div className="signIn__question">
             <p>Already have an account? <Link to={'/login'} style={{ textDecoration: "none", fontWeight: "bold", color: "#132CAD"}}>Log in</Link> </p>

@@ -15,6 +15,8 @@ type projectDetailsType = {
 const ProjectCard = (props :projectDetailsType ) => {
     const {title, description,raised, goal, days, img, link } = props
     return ( 
+        <Link to={link} >
+
         <div className="pcard">
           <img src={img}/>
             <div className="cdetail">
@@ -46,6 +48,7 @@ const ProjectCard = (props :projectDetailsType ) => {
              </div>
                  
         </div>
+        </Link>
     );
 }
  
