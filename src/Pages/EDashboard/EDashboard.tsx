@@ -123,23 +123,29 @@ const EDashboard = ({user}: any) => {
             
             <nav className="mobileNav">
                  <>
-                 <div  onClick={()=> tabClick("Dashboard")} className={active == "dashboard" ? "singlei  singlei-active" : "singlei"}>
+                 <div  onClick={()=>{
+                   setOpenBugger(false)
+                  tabClick("Dashboard")}} className={active == "dashboard" ? "singlei  singlei-active" : "singlei"}>
                          <BiHomeAlt  className="dicon" size="1rem"/>
                          <p>Dashboard</p>
                      </div>
-                     <div onClick={()=> tabClick("Products")} className={active == "wallet" ? "singlei  singlei-active" : "singlei"} >
+                     <div onClick={()=>{    setOpenBugger(false)
+                      tabClick("Products")}} className={active == "wallet" ? "singlei  singlei-active" : "singlei"} >
                          <BiWallet  className="dicon" size="1rem"/>
                          <p>Products</p>
                      </div>
-                     <div onClick={()=> tabClick("Wallet")} className={active == "wallet" ? "singlei  singlei-active" : "singlei"} >
+                     <div onClick={()=> {    setOpenBugger(false)
+                     tabClick("Wallet")}} className={active == "wallet" ? "singlei  singlei-active" : "singlei"} >
                          <BiWallet  className="dicon" size="1rem"/>
                          <p>Wallet</p>
                      </div>
-                     <div onClick={()=> tabClick("Media")} className={active == "faq" ? "singlei  singlei-active" : "singlei"}>
+                     <div onClick={()=> {    setOpenBugger(false)
+                     tabClick("Media")}} className={active == "faq" ? "singlei  singlei-active" : "singlei"}>
                          <FaQuestion  className="dicon" size="1rem"/>
                          <p>Media</p>
                      </div>
-                     <div onClick={()=> tabClick("setting")}  className={active == "settings" ? "singlei  singlei-active" : "singlei"}>
+                     <div onClick={()=> {    setOpenBugger(false)
+                     tabClick("setting")}}  className={active == "settings" ? "singlei  singlei-active" : "singlei"}>
                          <FiSettings className="dicon" size="1rem"/>
                          <p>Setting</p>
                      </div>

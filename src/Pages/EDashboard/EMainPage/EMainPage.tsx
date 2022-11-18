@@ -91,8 +91,17 @@ const EMainPage = () => {
 
     <div className="eMainPage">
         <div className="eMainPage__container">
+          {product ? 
+          <>
+            <h2 className="eMainHeading">CheckOut Your Product or Create a New Product</h2>
+            <p className="eMainText">Navigate to product to see your products</p>
+          </> :
+          <>
             <h2 className="eMainHeading">No Listed product Yet!</h2>
-            <p className="eMainText">You do not hav any live campaigns or listed products yet. </p>
+            <p className="eMainText">You do not have any live campaigns or listed products yet. </p>
+          </>
+          
+          }
             <button   onClick={() => setRegProduct(1)}   className='eMainText__button'>Start Pitching</button>
         </div>
     </div>
