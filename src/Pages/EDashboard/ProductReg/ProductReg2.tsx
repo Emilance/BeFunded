@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './ProductReg2.css';
 import {MdOutlineKeyboardBackspace}  from "react-icons/md"
 
-const ProductReg2 = ({setRegProduct, product, setProduct}: any) => {
+const ProductReg2 = ({setRegProduct, product, setProduct}:  any ) => {
   const navigate = useNavigate()
   return (
     <div className='productReg2'>
@@ -47,7 +47,7 @@ const ProductReg2 = ({setRegProduct, product, setProduct}: any) => {
 
           <div className="uploadImage__iframe">
             <input type="file" id='file'
-                onChange={(e)=> setProduct({...product, product_image: e.target.value})}
+                onChange={(e)=> setProduct({...product, product_image: e.target.files})}
             />
             <p>Upload Image</p>
           </div>

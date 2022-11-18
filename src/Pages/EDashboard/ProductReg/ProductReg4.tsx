@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import {MdOutlineKeyboardBackspace}  from "react-icons/md"
 
 
-const ProductReg4 = ({setRegProduct, product, setProduct}: any) => {
+
+const ProductReg4 = ({setRegProduct, product, setProduct, submitForm}: any) => {
     const navigate = useNavigate();
   return (
     <div className='productReg4'>
@@ -22,8 +23,7 @@ const ProductReg4 = ({setRegProduct, product, setProduct}: any) => {
         <label htmlFor="product-reg">Company/Product Registration</label>
         <input type="file" id='product-reg' 
         placeholder='Upload Certificate Image'
-        value={product.certificate}
-        onChange={(e)=> setProduct({...product, certificate: e.target.value})}
+        onChange={(e)=> setProduct({...product, certificate: e.target.files })}
         />
       </div>
 
@@ -60,13 +60,12 @@ const ProductReg4 = ({setRegProduct, product, setProduct}: any) => {
 
       <div className="checkbox-termsAndCondition">
         <input type="checkbox" />
-         <span>I have read and agree to BeFunded’s Terms and Condiions</span>
+         <span>I have read and agree to BeFundeds Terms and Condiions</span>
       </div>
 
-      <div className="productReg4__nextButton" onClick={() => {
-           console.log(product)
-        alert("This is the start the campaign") }
-        }>Start Campaign</div>
+      <div className="productReg4__nextButton" onClick={(e) => {
+           submitForm(e)
+        }}>Start Campaign</div>
     </div>
 </div>
   )

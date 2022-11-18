@@ -65,8 +65,8 @@ const SignIn = () => {
     console.log(validate)
     if(validate){
 
+      setSubmit(true)
       axios.post("https://befunded.herokuapp.com/login", {...forminput, role } ).then(res => {
-        setSubmit(true)
         console.log(res)
         const resp = res.data
         setUser(resp.user)
