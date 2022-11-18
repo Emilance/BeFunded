@@ -23,6 +23,7 @@ const ProductReg4 = ({setRegProduct, product, setProduct, submitForm}: any) => {
         <label htmlFor="product-reg">Company/Product Registration</label>
         <input type="file" id='product-reg' 
         placeholder='Upload Certificate Image'
+        name='image'
         onChange={(e)=> setProduct({...product, certificate: e.target.files })}
         />
       </div>
@@ -31,6 +32,7 @@ const ProductReg4 = ({setRegProduct, product, setProduct, submitForm}: any) => {
         <label htmlFor="company-address">Company Address</label>
         <input type="text" id='company-address' 
         placeholder='Enter Address here'
+        name='company_address'
         value={product.company_address}
         onChange={(e)=> setProduct({...product, companyaddress: e.target.value})}
         
@@ -40,7 +42,7 @@ const ProductReg4 = ({setRegProduct, product, setProduct, submitForm}: any) => {
       <div className="productReg4__inputDiv">
         <label>Number of Employees</label>
         <select
-        
+              name='number_of_employees'
         >
             <option value="one">1</option>
             <option value="two">2</option>
@@ -53,6 +55,7 @@ const ProductReg4 = ({setRegProduct, product, setProduct, submitForm}: any) => {
         <label htmlFor="linkedin-profile">LinkedIn Profile</label>
         <input type="text" id='linkedin-profile'
          placeholder='Name'
+         name='linkedIn'
          value={product.linkedIn}
          onChange={(e)=> setProduct({...product, linkedIn: e.target.value})}
          />
@@ -63,10 +66,8 @@ const ProductReg4 = ({setRegProduct, product, setProduct, submitForm}: any) => {
          <span>I have read and agree to BeFundeds Terms and Condiions</span>
       </div>
 
-      <div className="productReg4__nextButton" onClick={(e) => {
-           submitForm(e)
-        }}>Start Campaign</div>
-    </div>
+      <input type='submit' className="productReg4__nextButton"/>Start Campaign</div>
+   
 </div>
   )
 }

@@ -62,13 +62,13 @@ const EMainPage = () => {
                 product_name,   product_category, product_website,
               product_pitch, video_url,image_id, investment_amount,
               investment_raised, total_investors, amount_per_investors, equity_per_investors,
-              certificate:certificate[0], certificate_id, name_of_employees , linkedIn,
+              image:certificate[0], certificate_id, name_of_employees , linkedIn,
               deadline, owner,
             product_image  : product_image[0]
            };
        
           console.log(varToken)
-          axios.post("https://befunded.herokuapp.com/product/new", {Product} , {
+          axios.post("https://befunded.herokuapp.com/product/new", {...Product} , {
             headers: {
               Authorization: 'Bearer ' + varToken
             }
@@ -80,6 +80,7 @@ const EMainPage = () => {
            })
 
            console.log(Array.from(data))
+           console.log(Product)
         
   }
 
@@ -99,6 +100,8 @@ const EMainPage = () => {
 
     }
 
+    <form encType="multipart/form-data" onSubmit={submitForm}>
+
     {regProduct === 1 &&
        <ProductReg  setRegProduct={setRegProduct}  product={product} setProduct={setProduct}/>
     }
@@ -111,6 +114,8 @@ const EMainPage = () => {
      {regProduct === 4 &&
        <ProductReg4  setRegProduct={setRegProduct}  product={product} setProduct={setProduct}  submitForm={submitForm}/>
     }
+    </form>
+
     </>
   )
 }

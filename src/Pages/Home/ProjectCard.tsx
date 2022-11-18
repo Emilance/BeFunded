@@ -40,7 +40,7 @@ const ProjectCard = (props :projectDetailsType ) => {
                                </div>
                                 <div className="leftc">
                                         <BsClock size="1rem"/>
-                                            <span>`${days} days left`</span>
+                                            <span>{`${days} days left`}</span>
                                     
                                 </div>
                             

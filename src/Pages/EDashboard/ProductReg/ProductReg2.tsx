@@ -29,6 +29,7 @@ const ProductReg2 = ({setRegProduct, product, setProduct}:  any ) => {
             <input type="text" id='video-url'
              placeholder='https://'
              value={product.video_url}
+             name="video_url"
              onChange={(e)=> setProduct({...product, video_url: e.target.value})}
              />
           </div>
@@ -47,6 +48,7 @@ const ProductReg2 = ({setRegProduct, product, setProduct}:  any ) => {
 
           <div className="uploadImage__iframe">
             <input type="file" id='file'
+               name="image"
                 onChange={(e)=> setProduct({...product, product_image: e.target.files})}
             />
             <p>Upload Image</p>

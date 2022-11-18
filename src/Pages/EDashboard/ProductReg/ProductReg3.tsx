@@ -23,6 +23,7 @@ const ProductReg3 = ({setRegProduct, product, setProduct}:any) => {
             <label htmlFor="investment-amount">Investment Amount</label>
             <input type="text" id='investment-amount' 
             placeholder='$'
+            name="investment_amount"
             value={product.investment_amount}
             onChange={(e)=> setProduct({...product, investment_amount: e.target.value})}
             />
@@ -32,6 +33,7 @@ const ProductReg3 = ({setRegProduct, product, setProduct}:any) => {
             <label htmlFor="investment-amount">Number of investores</label>
             <select  
               value={product.total_investor}
+              name="total_investor"
               onChange={(e)=> setProduct({...product, total_investor: e.target.value})}
             >
                 <option value="one">1</option>
@@ -45,6 +47,7 @@ const ProductReg3 = ({setRegProduct, product, setProduct}:any) => {
             <label htmlFor="amount-per-investor">Amount Per Investor</label>
             <input type="text" id='amount-per-investor'
               value={product.amount_per_investors}
+              name="amount_per_investors"
               onChange={(e)=> setProduct({...product, amount_per_investors: e.target.value})}
             placeholder='$'/>
           </div>
@@ -53,6 +56,7 @@ const ProductReg3 = ({setRegProduct, product, setProduct}:any) => {
             <label htmlFor="equity-per-investor">Equity per Investor</label>
             <input type="text" id='equity-per-investor' 
             placeholder='$'
+            name='equity_per_investors'
             value={product.equity_per_investors}
             onChange={(e)=> setProduct({...product,  equity_per_investors: e.target.value})}
             />
