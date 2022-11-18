@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState,  useEffect } from "react";
 import {BiHomeAlt, BiWallet}  from "react-icons/bi"
 import {FaQuestion}  from "react-icons/fa"
 import {FiSettings}  from  "react-icons/fi"
@@ -14,6 +14,8 @@ import  {BiLogOut} from "react-icons/bi"
 import ProfileBar from "./DashboardHeader";
 import {GiHamburgerMenu}  from "react-icons/gi"
 import {ImCross} from "react-icons/im"
+import { getToken } from "../../../auth";
+import axios from "axios";
 
 
 
@@ -28,6 +30,24 @@ const Idashboard = ({user}: any) => {
 
     const [headerDropdown, setHeaderDropDown]  = useState(false)
     const [active, setActive] = useState<string>("dashboard")
+    const [product, setProduct] = useState<any[]>([])
+    const varToken = getToken()
+
+        useEffect(()=>{
+
+        axios.get(`https://befunded.herokuapp.com/products/all`,  {
+        headers: {
+            Authorization: 'Bearer ' + varToken
+            }
+        }).then(res => {
+            console.log(res.data)
+            setProduct(res.data)
+        }).catch(err => {
+        console.log(err)
+        })
+        console.log(product)
+        }, [])
+   
     const tabClick =(key: string)=>{
         setActive(key)
     }
@@ -115,7 +135,7 @@ const close =<GiHamburgerMenu
                 
                 <>
                   <Upperdash   name={user.name}/>
-                 <Lowerdash/> 
+                 <Lowerdash  product={product}/> 
                 </>}
             </div>
         </div>

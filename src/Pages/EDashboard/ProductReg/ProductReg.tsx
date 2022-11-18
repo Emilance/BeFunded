@@ -31,10 +31,8 @@ const ProductReg = ({setRegProduct, product, setProduct} : any) => {
                     value={product.product_category}
                     onChange={(e)=> setProduct({...product, product_category: e.target.value})}
                 >
-                    <option value="agriculture">Agriculture</option>
-                    <option value="technology">Technology</option>
-                    <option value="logistics">Logistics</option>
-                    <option value="consumers">Consumers</option>
+                    <option value="physical">Physical</option>
+                    <option value="Digital">Digital</option>
                 </select>
             </div>
 

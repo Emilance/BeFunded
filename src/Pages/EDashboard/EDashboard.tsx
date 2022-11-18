@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './EDashboard.css';
 import BeFunded from '../../assets/BeFunded.svg';
 import Dashboard from '../../assets/DashboardLogo.svg';
@@ -19,6 +19,8 @@ import {BiHomeAlt, BiWallet}  from "react-icons/bi"
 import {FaQuestion}  from "react-icons/fa"
 import {FiSettings}  from  "react-icons/fi"
 import Header from '../../component/header/Header';
+import { getToken } from '../../auth';
+import axios from 'axios';
 
 const pagesOptions = [
   {
@@ -70,6 +72,25 @@ const EDashboard = ({user}: any) => {
           size="1.7rem" className="bugger" />
         const navigate = useNavigate();
  
+
+        const [product, setProduct] = useState<any[]>([])
+        const varToken = getToken()
+      
+      useEffect(()=>{
+      
+      axios.get(`https://befunded.herokuapp.com/product/mine`,  {
+       headers: {
+           Authorization: 'Bearer ' + varToken
+           }
+      }).then(res => {
+           console.log(res.data)
+           setProduct(res.data)
+      }).catch(err => {
+       console.log(err)
+      })
+      console.log(product)
+      }, [])
+         
   return (
     <div className="eDashboard">
       <div className="eDashboard__sidebar">
@@ -131,7 +152,7 @@ const EDashboard = ({user}: any) => {
       <div className="dheader">
                    <ProfileBar   user={user}/>
         </div>
-        {active == "Products"  && <EMainPage/>}
+        {active == "Products"  && <ProductPage product={product}/>}
         {active == "Dashboard"  && <EMainPage/>}
         {active == "Wallet"  && <WalletPage  user={user}/>}
         {active == "Media"  && <MediaPage/>}

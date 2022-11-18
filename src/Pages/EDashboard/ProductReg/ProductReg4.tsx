@@ -34,7 +34,7 @@ const ProductReg4 = ({setRegProduct, product, setProduct, submitForm}: any) => {
         placeholder='Enter Address here'
         name='company_address'
         value={product.company_address}
-        onChange={(e)=> setProduct({...product, companyaddress: e.target.value})}
+        onChange={(e)=> setProduct({...product, company_address: e.target.value})}
         
         />
       </div>
@@ -42,12 +42,14 @@ const ProductReg4 = ({setRegProduct, product, setProduct, submitForm}: any) => {
       <div className="productReg4__inputDiv">
         <label>Number of Employees</label>
         <select
-              name='number_of_employees'
+         value={product.number_of_employees}
+         onChange={(e)=> setProduct({...product, number_of_employees: e.target.value})}
+          name='number_of_employees'
         >
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
         </select>
       </div>                
 

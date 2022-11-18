@@ -26,7 +26,7 @@ const ProjectCard = (props :projectDetailsType ) => {
                            {title}
                         </Link> 
                     </h2>
-                    <p>{description}</p>
+                    <p>{description}...</p>
                     <div className="lowerpart">
                                 <div className="rightc">
                                         <div className="stat">

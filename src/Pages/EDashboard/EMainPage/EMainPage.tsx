@@ -20,7 +20,7 @@ const productDetails = {
   product_name :"",  product_category:"", product_website: "",
   product_pitch: "", video_url: "", product_image:'', image_id: "", investment_amount: "",
   investment_raised: "", total_investors: '', amount_per_investors: '', equity_per_investors:"",
-  certificate: "", certificate_id : "", company_address: "", name_of_employees : '', linkedIn:"",
+  certificate: "", certificate_id : "", company_address: "", number_of_employees : '', linkedIn:"",
   deadline:'' , owner: ''
 }
 const EMainPage = () => {
@@ -28,11 +28,10 @@ const EMainPage = () => {
   const [regProduct,  setRegProduct]= useState<null | number>(null)
   const [product, setProduct ] = useState(productDetails)
 
-
     const {product_name,   product_category, product_website,
     product_pitch, video_url, product_image, image_id, investment_amount,
     investment_raised, total_investors, amount_per_investors, equity_per_investors,
-    certificate, certificate_id, company_address, name_of_employees , linkedIn,
+    certificate, certificate_id, company_address,  number_of_employees , linkedIn,
     deadline, owner}  = product
     const varToken = getToken()
   const submitForm =async (e:React.ChangeEvent<HTMLFormElement>) => {
@@ -40,10 +39,10 @@ const EMainPage = () => {
          const  data = new FormData();
   
     
-         data.append("certificate", certificate[0]);
-         data.append("product_image", product_image[0]);
          data.append("product_name", product_name);
-         data.append("roduct_category",product_category);
+         data.append("product_category",product_category);
+         data.append("image", product_image[0]);
+         data.append("image", certificate[0]);
          data.append("product_website", product_website);
          data.append("product_pitch", product_pitch);
          data.append("video_url", video_url);
@@ -52,35 +51,35 @@ const EMainPage = () => {
          data.append("investment_raised", investment_raised);
          data.append("total_investors", total_investors);
          data.append("equity_per_investors", equity_per_investors);
+         data.append("amount_per_investors", amount_per_investors)
+         data.append("company_address", company_address)
          data.append("certificate_id", certificate_id);
-         data.append("name_of_employees", name_of_employees);
-         data.append(" linkedIn",  linkedIn);
-         data.append("deadline", deadline);
+         data.append("number_of_employees", number_of_employees);
+         data.append("linkedin", linkedIn);
          data.append("owner", owner);
         
            const Product= {
                 product_name,   product_category, product_website,
               product_pitch, video_url,image_id, investment_amount,
               investment_raised, total_investors, amount_per_investors, equity_per_investors,
-              image:certificate[0], certificate_id, name_of_employees , linkedIn,
-              deadline, owner,
+              image:certificate[0], certificate_id, number_of_employees , linkedIn,
+              deadline, owner,company_address,
             product_image  : product_image[0]
            };
        
-          console.log(varToken)
-          axios.post("https://befunded.herokuapp.com/product/new", {...Product} , {
+        
+          axios.post("https://befunded.herokuapp.com/product/new", data , {
             headers: {
               Authorization: 'Bearer ' + varToken
             }
           } ).then(res=>{
-
             console.log(res)
+            navigate(`/project/${res.data._id}`)
            }).catch(err=>{
             console.log(err)
            })
 
-           console.log(Array.from(data))
-           console.log(Product)
+          
         
   }
 

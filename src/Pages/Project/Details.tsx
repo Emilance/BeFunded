@@ -5,7 +5,7 @@ const Details = () => {
     return ( 
         <div className="pinfo">
             <div className="pinfosb">
-                <p>Comapany/Creator Terms</p>
+                <p>Company/Creator Terms</p>
                 <p>Return On Investment</p>
                 <p>The Team</p>
                 <p>Registration</p>
