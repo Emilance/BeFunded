@@ -30,6 +30,7 @@ import RegistrationSteps from './Pages/Investors/Registration/RegistrationSteps'
 import NotFound from './Pages/NotFound/NotFound';
 import ProductReg3 from './Pages/EDashboard/ProductReg/ProductReg3';
 import ProductReg4 from './Pages/EDashboard/ProductReg/ProductReg4';
+import TransactionSuccess from './Pages/TransactionSuccess/TransactionSuccess';
 
 
 
@@ -68,8 +69,24 @@ function App() {
           <Route path='/productsreg3' element={<ProductReg3 />}/>
           <Route path='/productsreg4' element={<ProductReg4 />}/>
 
-            
+
+        <Route path='/idashboard' element={   <h1>Loading...... refresh page or log in</h1>} />
+     
+        }
+        <Route path='/invest' element={<Invest/>} />
+        <Route path='/dashboard' element={< EDashboard/>}>
+          <Route path='wallet' element={<WalletPage />}/>
+          <Route path='media' element={<MediaPage />}/>
+          <Route path='settings' element={<SettingPage />}/>
+          <Route path='products' element={<ProductPage />}/> */}
+          <Route path='/productsreg' element={<ProductReg />} />
+          <Route path='productsreg2' element={<ProductReg2 />} />
+          <Route path='productsreg' element={<ProductReg />}/>
+          <Route path='productsreg3' element={<ProductReg3 />}/>
+          <Route path='productsreg4' element={<ProductReg4 />}/>
+
         <Route path='*' element={<NotFound />} />
+        <Route path='/success' element={<TransactionSuccess/>}/>
       </Routes>
      
     </div>

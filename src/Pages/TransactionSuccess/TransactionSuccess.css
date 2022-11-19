@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+.transactionSuccess{
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.transactionSuccess__cloud{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+@media screen and (max-width: 768px) {
+    .transactionSuccess__cloud{
+        /* display: none; */
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+    }
+}
+
+.transactionSuccess__icon{
+    cursor: pointer;
+}
+
+.transactionSuccess__header{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    align-items: center;
+    padding: 30px 50px;
+}
+
+.transactionSuccess__left{
+    display: flex;
+    align-items: center;
+}
+
+.transactionSuccess__left > span{
+    margin-left: 11.5px;
+    font-weight: 400;
+    font-size: 1.13rem;
+    line-height: 28px;
+    color: #2B2A30;
+}
+
+.transactionSuccess__userDetails{
+    display: flex;
+    align-items: center;
+}
+
+.transactionSuccess__userDetails > p{
+    font-weight: 500;
+    font-size: 1.13rem;
+    line-height: 28px;
+}
+
+.transactionSuccess__userDetails > *:not(:first-child){
+    margin-left: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+    .transactionSuccess__userDetails > *:not(:last-child){
+        display: none;
+    }
+}
+
+.transactionSuccess__container{
+    /* border: 3px solid green; */
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.transactionSuccess__containerHeader{
+    margin-bottom: 0.875rem;
+}
+
+.transactionSuccess__containerParagraph{
+    margin-bottom: 3.44rem;
+    text-align: center;
+}
+
+.transactionSuccess__containerButton1{
+    background: #132CAD;
+    border-radius: 8px;
+    width: 30%;
+    padding: 20px 0px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 28px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 3.44rem;
+}
+
+.transactionSuccess__containerButton2{
+    background: #EDEFFD;
+    border-radius: 8px;
+    width: 30%;
+    padding: 20px 0px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 28px;
+    color: #132CAD;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 3.44rem;
+}
+
+@media screen and (max-width: 500px) {
+    .transactionSuccess__containerButton1,
+    .transactionSuccess__containerButton2{
+        width: 40%;
+        font-size: 1rem;
+        padding: 20px 8px;
+    }
+}
