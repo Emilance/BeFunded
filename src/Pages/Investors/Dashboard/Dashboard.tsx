@@ -27,7 +27,7 @@ type userType = {
 }
 const Idashboard = ({user}: any) => {
     const [openBugger, setOpenBugger] = useState(false)
-
+  
     const [headerDropdown, setHeaderDropDown]  = useState(false)
     const [active, setActive] = useState<string>("dashboard")
     const [product, setProduct] = useState<any[]>([])
@@ -45,7 +45,7 @@ const Idashboard = ({user}: any) => {
         }).catch(err => {
         console.log(err)
         })
-        console.log(product)
+      
         }, [])
    
     const tabClick =(key: string)=>{

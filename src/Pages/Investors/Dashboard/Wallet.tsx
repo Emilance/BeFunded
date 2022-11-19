@@ -31,11 +31,15 @@ const Wallet = ({user}:any) => {
                   
                     <div className="topde">
                         <h3>Colouring Pen</h3>
+                      {user.role !="investor"   &&      
                         <h4 className="green">Edit Investment</h4>
+                      }
                     </div>
                     <div className="topde">
                         <p>By <span>Peter Emmanuel</span></p>
+                        {user.role !="investor"   &&      
                         <h4 className="red">Delete Investment</h4>
+                      }
 
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates veritatis quisquam eaque molestias assumenda quasi.</p>

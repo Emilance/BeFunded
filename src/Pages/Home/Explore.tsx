@@ -81,7 +81,7 @@ const Explore = () => {
     }).catch(err => {
         console.log(err)
     })
-    console.log(product)
+
 }, [])
 
     const scrollHandler= (direction: string)=>{
