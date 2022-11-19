@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductReg2.css';
 import {MdOutlineKeyboardBackspace}  from "react-icons/md"
+import ReactPlayer from 'react-player';
 
 const ProductReg2 = ({setRegProduct, product, setProduct}:  any ) => {
   const navigate = useNavigate()
@@ -27,7 +28,7 @@ const ProductReg2 = ({setRegProduct, product, setProduct}:  any ) => {
           <div className="productReg2__inputDiv">
             <label htmlFor="video-url">Video Url</label>
             <input type="text" id='video-url'
-             placeholder='https://'
+             placeholder=' youtube video link e.g  https://'
              value={product.video_url}
              name="video_url"
              onChange={(e)=> setProduct({...product, video_url: e.target.value})}
@@ -35,7 +36,10 @@ const ProductReg2 = ({setRegProduct, product, setProduct}:  any ) => {
           </div>
 
           <div className="productReg2__videoIframe">
-            <p>Video will appear here</p>
+            {product.video_url ? 
+            <ReactPlayer  width="100%" height="100%" url={product.video_url} />
+            :  <p>Video will appear here</p>
+            }
           </div>
 
           <div className="productReg2__videoOverlay">

@@ -43,8 +43,8 @@ function App() {
        wallet_balance: userInfo.wallet_balance
       })
     }, [])
-   
     const userI =  getUser()
+   
 
   return (
     <div className="app">
@@ -62,29 +62,9 @@ function App() {
         <Route path='/idashboard' element={   <h1>Loading...... refresh page or log in</h1>} />    
       } 
       <Route path="/iregistration"   element={<RegistrationSteps/>}/>
-           <Route path='/invest'  element={<Invest/>}/>
-          <Route path='/productsreg' element={<ProductReg />}/>
-          <Route path='/productsreg2' element={<ProductReg2 />} />
-          <Route path='/productsreg' element={<ProductReg />}/>
-          <Route path='/productsreg3' element={<ProductReg3 />}/>
-          <Route path='/productsreg4' element={<ProductReg4 />}/>
+          <Route path='/invest'  element={<Invest/>}/>
 
-
-        <Route path='/idashboard' element={   <h1>Loading...... refresh page or log in</h1>} />
-     
-        }
-        <Route path='/invest' element={<Invest/>} />
-        <Route path='/dashboard' element={< EDashboard/>}>
-          <Route path='wallet' element={<WalletPage />}/>
-          <Route path='media' element={<MediaPage />}/>
-          <Route path='settings' element={<SettingPage />}/>
-          <Route path='products' element={<ProductPage />}/> */}
-          <Route path='/productsreg' element={<ProductReg />} />
-          <Route path='productsreg2' element={<ProductReg2 />} />
-          <Route path='productsreg' element={<ProductReg />}/>
-          <Route path='productsreg3' element={<ProductReg3 />}/>
-          <Route path='productsreg4' element={<ProductReg4 />}/>
-
+          
         <Route path='*' element={<NotFound />} />
         <Route path='/success' element={<TransactionSuccess/>}/>
       </Routes>
