@@ -30,6 +30,7 @@ import RegistrationSteps from './Pages/Investors/Registration/RegistrationSteps'
 import NotFound from './Pages/NotFound/NotFound';
 import ProductReg3 from './Pages/EDashboard/ProductReg/ProductReg3';
 import ProductReg4 from './Pages/EDashboard/ProductReg/ProductReg4';
+import TransactionSuccess from './Pages/TransactionSuccess/TransactionSuccess';
 
 
 
@@ -78,8 +79,9 @@ function App() {
           <Route path='productsreg3' element={<ProductReg3 />}/>
           <Route path='productsreg4' element={<ProductReg4 />}/>
 
-        </Route>
+        {/* </Route> */}
         <Route path='*' element={<NotFound />} />
+        <Route path='/success' element={<TransactionSuccess/>}/>
       </Routes>
      
     </div>
