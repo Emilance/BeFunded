@@ -1,10 +1,14 @@
 
 
 const FundWallet = () => {
+
+
+
     return ( 
         <>
      <div className="welcome">
                 <h1>wallet/fund</h1>
+
             </div>
           <div className="fundWallet">
                 <div className="sidebar_FW ">
@@ -23,8 +27,12 @@ const FundWallet = () => {
                     </div>           
                 </div>
                 <form className="FW_main">
-
                 <div className="field fundfield">
+                        <label>Enter Amount here</label>
+                        <input  type="Number"  placeholder="$50 000"/>            
+               </div>
+              
+                {/* <div className="field fundfield">
                         <label>Enter Card Number</label>
                         <input  type="text"  placeholder="$50 000"/>            
                </div>
@@ -44,8 +52,8 @@ const FundWallet = () => {
                 <div className="field fundfield m">
                         <label>CVV</label>
                         <input  type="text"  placeholder="$50 000"/>            
-                </div>
-                </div>
+                </div> 
+    </div>*/}
                 <button>Proceed Payments</button>
                 </form>
             </div>

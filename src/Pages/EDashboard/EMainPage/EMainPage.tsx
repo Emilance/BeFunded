@@ -93,7 +93,7 @@ const EMainPage = () => {
         <div className="eMainPage__container">
           {product ? 
           <>
-            <h2 className="eMainHeading">CheckOut Your Product or Create a New Product</h2>
+            <h2 className="eMainHeading">Checkout Your Product or Create a New Product</h2>
             <p className="eMainText">Navigate to product to see your products</p>
           </> :
           <>
