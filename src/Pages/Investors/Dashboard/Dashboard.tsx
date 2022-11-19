@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState,  useEffect } from "react";
 import {BiHomeAlt, BiWallet}  from "react-icons/bi"
 import {FaQuestion}  from "react-icons/fa"
 import {FiSettings}  from  "react-icons/fi"
@@ -12,6 +12,11 @@ import { Link } from "react-router-dom";
 import {BsPerson} from "react-icons/bs"
 import  {BiLogOut} from "react-icons/bi"
 import ProfileBar from "./DashboardHeader";
+import {GiHamburgerMenu}  from "react-icons/gi"
+import {ImCross} from "react-icons/im"
+import { getToken } from "../../../auth";
+import axios from "axios";
+
 
 
 type userType = {
@@ -21,11 +26,37 @@ type userType = {
  wallet_balance: number,
 }
 const Idashboard = ({user}: any) => {
+    const [openBugger, setOpenBugger] = useState(false)
+  
     const [headerDropdown, setHeaderDropDown]  = useState(false)
     const [active, setActive] = useState<string>("dashboard")
+    const [product, setProduct] = useState<any[]>([])
+    const varToken = getToken()
+
+        useEffect(()=>{
+
+        axios.get(`https://befunded.herokuapp.com/products/all`,  {
+        headers: {
+            Authorization: 'Bearer ' + varToken
+            }
+        }).then(res => {
+            console.log(res.data)
+            setProduct(res.data)
+        }).catch(err => {
+        console.log(err)
+        })
+      
+        }, [])
+   
     const tabClick =(key: string)=>{
         setActive(key)
     }
+    const open = <ImCross
+    onClick={()=> setOpenBugger(false)}
+       size="1.5rem" className="bugger" />
+const close =<GiHamburgerMenu 
+       onClick={()=> setOpenBugger(true)}
+        size="1.7rem" className="bugger" />
     
     return ( 
         <div className="idash">
@@ -53,7 +84,48 @@ const Idashboard = ({user}: any) => {
                 </div>
             </div>
             <div className="dash">
-                <div className="dheader">
+            <div className="dashheader">
+
+            <div className="logo  onlymobile">
+               {openBugger ? open : close}
+               <Link to="/">
+                   <h1 className="title">Be<span>Funded</span></h1>
+               </Link>
+            </div>
+            <ProfileBar user={user} />
+            </div>
+            {openBugger   &&
+            
+            
+            
+           <nav className="mobileNav">
+                <>
+                <div  onClick={()=>{ setOpenBugger(false)
+                             tabClick("dashboard")}} className={active == "dashboard" ? "singlei  singlei-active" : "singlei"}>
+                        <BiHomeAlt  className="dicon" size="1rem"/>
+                        <p>Dashboard</p>
+                    </div>
+                    <div onClick={()=>{setOpenBugger(false) 
+                                   tabClick("wallet")}} className={active == "wallet" ? "singlei  singlei-active" : "singlei"} >
+                        <BiWallet  className="dicon" size="1rem"/>
+                        <p>Wallet</p>
+                    </div>
+                    <div onClick={()=> {setOpenBugger(false)
+                                 tabClick("faq")}} className={active == "faq" ? "singlei  singlei-active" : "singlei"}>
+                        <FaQuestion  className="dicon" size="1rem"/>
+                        <p>FAQ</p>
+                    </div>
+                    <div onClick={()=>{setOpenBugger(false) 
+                    tabClick("setting") }}  className={active == "settings" ? "singlei  singlei-active" : "singlei"}>
+                        <FiSettings className="dicon" size="1rem"/>
+                        <p>Setting</p>
+                    </div>
+                </>
+                
+                
+            </nav>
+            }
+              <div className="dheader">
                    <ProfileBar   user={user}/>
                 </div>
                 {active =="wallet" &&
@@ -63,7 +135,7 @@ const Idashboard = ({user}: any) => {
                 
                 <>
                   <Upperdash   name={user.name}/>
-                 <Lowerdash/> 
+                 <Lowerdash  product={product}/> 
                 </>}
             </div>
         </div>

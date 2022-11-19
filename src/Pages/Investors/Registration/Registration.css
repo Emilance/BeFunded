@@ -165,3 +165,10 @@
    cursor: pointer;
     
 }
+
+
+@media (max-width:700px) {
+    .reg_header{
+        padding: 0;
+    }
+}

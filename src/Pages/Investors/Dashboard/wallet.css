@@ -4,7 +4,9 @@
     align-items: center;
     padding-left: 2rem;
 }
+.wallet{
 
+}
 .welcome > h1{
     font-family: 'Inter';
     font-style: normal;
@@ -184,6 +186,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: fit-content;
 }
 
 .fundfield {
@@ -194,20 +197,37 @@
 .fundfield > input {
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+.fundfield > select {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
 .fundfield > label {
     font-weight: 600;
     color: #000000;
     font-size: 1.3rem;
 }
+.field > select{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1rem  ; 
+    width: 95%;
+    height: 3rem;
+    margin-top: 0.5rem;   
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
 .doublefields {
     display:flex;
-    width: 60%;
-    margin: auto;
+    width: 90%;
+  
  
 }
 
 .doublefields > .fundfield {
-    width: 46%;
+    width: 44%;
    margin: 0;
 
 }
@@ -218,13 +238,13 @@
 }
 
 .doublefields > .m{
-    margin-left: 1rem;
+    margin-left: 2.5rem;
 }
 .FW_main > button {
     height: 3rem;
-    width:  59%;
+    width:  87%;
     padding: 0;
-    margin: 1.3rem ;
+    margin: 1.3rem auto ;
     margin-top: 2rem;
     background-color: #132CAD;
     color: #ffffff;
@@ -235,4 +255,34 @@
 
 .tabs_FW_active{
     background-color: #EDEFFD;
+}
+
+@media (max-width: 700px ) {
+    .walleta{
+        margin-left: 0;
+    }
+    .right >button {
+        width: 7rem;
+       
+    }
+    .left >p{
+        width: 90%;
+    }
+    .investedproject{
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+    .ipdetails >p{
+        width: 70%;
+    }
+    .sidebar_FW{
+        display: none;
+    }
+    .doublefields > .fundfield {
+        width: 40%;
+    
+    }
+    .FW_main > button {
+       width: 90%;
+    }
 }

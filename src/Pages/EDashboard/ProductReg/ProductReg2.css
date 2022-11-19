@@ -4,6 +4,7 @@
     /* text-align: center; */
     font-family: 'Inter', sans-serif;
     position: relative;
+    flex: 1;
 }
 
 .productReg2__back{
@@ -14,7 +15,6 @@
 }
 
 .productReg2__heading{
-    /* border: 1px solid red; */
     margin-top: 96px;
     font-weight: 700;
     font-size: 32px;
@@ -36,7 +36,7 @@
     font-size: 18px;
     line-height: 28px;
     color: #82808F;
-    margin-bottom: 35px;
+    margin-bottom: 1.8rem;
 }
 
 
@@ -129,7 +129,6 @@
 }
 
 .productReg2__videoOverlay{
-    /* border: 1px solid red; */
     text-align: center;
     margin: 36px 0 28px;
 }
@@ -181,4 +180,44 @@
     margin-bottom: 60px;
     margin-top: 2.25rem;
     text-align:center;
+}
+
+
+@media (max-width:800px) {
+    .productReg2__form{
+        width:90%;
+    }
+   
+    .productReg2 > *{
+        text-align: start !important;
+        padding: 1rem;
+    }
+    .productReg2__pitchVideo{
+        width: 90%;
+        text-align: start;
+    }
+    .pitch__text {
+        text-align: start;
+    }
+    .productReg2__step{
+        margin-bottom: 0.7rem;
+    }
+    .productReg2__heading{
+     margin-top: 1rem;
+    }
+    .productReg2__motto{
+        margin: 0.5rem 0;
+    
+    }
+    
+.productReg2__videoOverlay{
+    text-align: star;
+    margin:0.6rem 0;
+    width: 100%;
+    display: block;
+}
+.videoOverlay__text{
+    text-align: start;
+    width: 100%;
+}
 }

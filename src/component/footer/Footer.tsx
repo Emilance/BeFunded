@@ -18,7 +18,8 @@ const Footer = () => {
 
             </div>
             <div className="sec">
-                <h2>Register</h2>
+                <h2>Enterpreneur</h2>
+                <p>Register</p>
                  <p>How it Works</p>
                  <p>Educattion Center</p>
                  <p>Fees</p>

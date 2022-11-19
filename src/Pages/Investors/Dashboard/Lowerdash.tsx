@@ -61,7 +61,7 @@ const projects = [
     },
 
 ]
-const Lowerdash = () => {
+const Lowerdash = ({product}:any) => {
     const scrollHandler= (direction: string)=>{
    
         var TestCon = document.querySelector("#caro")!
@@ -96,16 +96,16 @@ const Lowerdash = () => {
            <div   id="caro" className="featured">
         
                 <div className="projectCon">
-                   {projects.map((data, i) => {
+                   {product && product.map((data:any, i: any) => {
                        return(
                         <ProjectCard  key={i}
-                            title ={data.name}
-                            description ={data.description}
-                            raised ={data.raised}
-                            goal ={data.goal}
-                            img = {data.img}
-                            days = {data.days}
-                            link ={data.link}
+                        title ={data.product_name}
+                        description ={data.product_pitch.slice(0,  95)}
+                        raised ={data.investment_raised}
+                        goal ={data.investment_amount}
+                        img = {data.product_image}
+                        days = "30"
+                        link ={`/project/${data._id}`}
                         />
                        )
                    })}

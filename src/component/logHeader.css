@@ -1,0 +1,45 @@
+.htitle{
+    color: #020512;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: start;
+
+}
+
+
+.htitle> span {
+    color: #132CAD;
+ 
+}
+
+.reg_header{
+    height: 3.5rem;
+    display: flex;
+    padding:1rem 3rem;
+ 
+
+}
+
+
+@media (max-width:700px) {
+    .htitle{
+        color: #020512;
+        font-family: 'Inter';
+       font-size: 1rem;
+    
+    }
+    .htitle> span {
+        font-size: 1.5rem;
+     
+    }
+    
+    .reg_header{
+        height: 3.5rem;
+        display: flex;
+        margin: 1rem;
+    
+    }
+}

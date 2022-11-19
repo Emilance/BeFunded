@@ -9,7 +9,6 @@
     align-items: center;
     height: 5rem;
     font-family: 'Inter', sans-serif;
-   
 }
 
 .title{
@@ -37,6 +36,25 @@
     height: 100%;
     width: 100%;
 }
+.mobileNav{
+    width: 90%;
+    height: 50vh;
+    background-color: white;
+    z-index: 3;
+    position: absolute;
+    top:5rem;
+}
+.mobileNav > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+}
+
 .navBar > ul  > li {
     margin:0 1rem
     
@@ -52,6 +70,18 @@
     
 }
 
+.mobileNav > ul  > li  > a{
+    text-decoration: none;
+    color:#020512;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+      
+}
+.mobileNav > ul  > li {
+    margin: 0.7rem 0;
+}
 
 
 .btn{
@@ -77,9 +107,24 @@
     color: #FBFBFC;
     width: 6rem;
 }
-
+.logo{
+    display: flex;
+    align-items: center;
+   
+}
+.logo > a {
+    text-decoration: none;
+}
+.bugger{
+    display: none;
+    cursor: pointer;
+    width: 2rem;
+}
 
 @media (max-width: 1000px) {
+    .bugger{
+        display: flex;
+    }
     .navBar{
        display: none;
     }
@@ -93,5 +138,31 @@
     }
     .primary-btn{
         width: 4rem;
+    }
+    .btncontainer{
+        display: none;
+    }
+    .header > .title{
+        font-size: 1rem;
+        margin-left: 1rem;
+    
+    }
+  .title{
+        font-size: 1rem  !important;
+       
+    
+    }
+    .title> span {
+        font-size: 1.5rem;
+     
+    }
+    .mobileNav > ul > .mobile {
+        display: flex;
+        flex-direction: column;
+       width: 100%;
+    }
+    .mobileNav > ul > .mobile > button {
+        width: 90%;
+        margin-top: 0.5rem;
     }
 }

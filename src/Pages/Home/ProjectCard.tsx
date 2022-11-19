@@ -15,6 +15,8 @@ type projectDetailsType = {
 const ProjectCard = (props :projectDetailsType ) => {
     const {title, description,raised, goal, days, img, link } = props
     return ( 
+        <Link to={link} >
+
         <div className="pcard">
           <img src={img}/>
             <div className="cdetail">
@@ -24,7 +26,7 @@ const ProjectCard = (props :projectDetailsType ) => {
                            {title}
                         </Link> 
                     </h2>
-                    <p>{description}</p>
+                    <p>{description}...</p>
                     <div className="lowerpart">
                                 <div className="rightc">
                                         <div className="stat">
@@ -38,7 +40,7 @@ const ProjectCard = (props :projectDetailsType ) => {
                                </div>
                                 <div className="leftc">
                                         <BsClock size="1rem"/>
-                                            <span>`${days} days left`</span>
+                                            <span>{`${days} days left`}</span>
                                     
                                 </div>
                             
@@ -46,6 +48,7 @@ const ProjectCard = (props :projectDetailsType ) => {
              </div>
                  
         </div>
+        </Link>
     );
 }
  

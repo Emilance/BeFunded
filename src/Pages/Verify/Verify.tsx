@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const Verify = () => {
   const navigate = useNavigate();
   const goToDashBoard = () => {
-    navigate('/dashboard')
+    navigate('/idashboard')
   }
   
   return (
@@ -20,9 +20,9 @@ const Verify = () => {
             <div className="verify__body">
                 <p>Your Account has been created Successfully. Check your email to verify your account and continue to app.</p>
             </div>
-        <Link  className="verify__mail" to="/idashboard">
-            <p className="verify__mail">Check your dashboard</p>
-            </Link>
+           <Link  className="verify__mail" to="/idashboard">
+              <p className="verify__mail">Check your dashboard</p>
+           </Link>
 
             <button className="verify__button" onClick={goToDashBoard}>Log in to continue</button>
 

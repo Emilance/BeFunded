@@ -108,3 +108,25 @@
     margin-top: 2.25rem;
     text-align:center;
 }
+
+
+@media (max-width:800px) {
+    .productReg3__form{
+        width:90%;
+    }
+    .productReg3 > *{
+        text-align: start !important;
+        padding: 1rem;
+    }
+    .productReg3__step{
+        margin-bottom: 0.7rem;
+    }
+    .productReg3__heading{
+     margin-top: 1rem;
+    }
+    .productReg3__motto{
+        margin: 0.5rem 0;
+    
+    }
+
+}

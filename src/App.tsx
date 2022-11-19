@@ -51,7 +51,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/signUp' element={<Signup />} />
-        <Route path='/project' element={<Project />} />
+        <Route path="/project/:productId" element={<Project />} />
         <Route path='/verify' element={<Verify />}/>
         <Route path='/login' element={<SignIn/>} />
         {userI.name   ? 
@@ -62,7 +62,13 @@ function App() {
         <Route path='/idashboard' element={   <h1>Loading...... refresh page or log in</h1>} />    
       } 
       <Route path="/iregistration"   element={<RegistrationSteps/>}/>
-        {/* <Route path='/invest' element={<Invest/>} />
+           <Route path='/invest'  element={<Invest/>}/>
+          <Route path='/productsreg' element={<ProductReg />}/>
+          <Route path='/productsreg2' element={<ProductReg2 />} />
+          <Route path='/productsreg' element={<ProductReg />}/>
+          <Route path='/productsreg3' element={<ProductReg3 />}/>
+          <Route path='/productsreg4' element={<ProductReg4 />}/>
+
 
         <Route path='/idashboard' element={   <h1>Loading...... refresh page or log in</h1>} />
      
@@ -79,7 +85,6 @@ function App() {
           <Route path='productsreg3' element={<ProductReg3 />}/>
           <Route path='productsreg4' element={<ProductReg4 />}/>
 
-        {/* </Route> */}
         <Route path='*' element={<NotFound />} />
         <Route path='/success' element={<TransactionSuccess/>}/>
       </Routes>
