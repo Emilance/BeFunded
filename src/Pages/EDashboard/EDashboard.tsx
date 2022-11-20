@@ -91,8 +91,9 @@ const EDashboard = ({user}: any) => {
       }).catch(err => {
        console.log(err)
       })
-      console.log(product)
+    
       }, [])
+
          
   return (
     <div className="eDashboard">
