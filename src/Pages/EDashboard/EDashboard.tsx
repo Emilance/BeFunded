@@ -161,7 +161,13 @@ const EDashboard = ({user}: any) => {
       <div className="dheader">
                    <ProfileBar   user={user}/>
         </div>
-        {active == "Products"  && <ProductPage product={product}/>}
+        {active == "Products"  &&
+        <>
+        {product ? 
+           <ProductPage product={product}/> 
+           :
+            <EMainPage/>}
+        </>}
         {active == "Dashboard"  && <EMainPage/>}
         {active == "Wallet"  && <WalletPage  user={user}/>}
         {active == "Media"  && <MediaPage/>}
