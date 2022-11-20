@@ -18,7 +18,7 @@ export function getToken(){
 }
 
 export function deleteCookie(){
-    Cookies.remove('user', { Path: '/', Domain: 'www.be-funded.vercel.app' })
-    Cookies.remove('token', { Path: '/', Domain: 'www.be-funded.vercel.app' })
+    Cookies.remove('user', { path: '/', domain: 'www.be-funded.vercel.app' })
+    Cookies.remove('token', { path: '/', domain: 'www.be-funded.vercel.app' })
 
 }
