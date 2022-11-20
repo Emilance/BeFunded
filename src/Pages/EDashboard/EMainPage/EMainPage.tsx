@@ -31,6 +31,7 @@ const EMainPage = () => {
   const [regProduct,  setRegProduct]= useState<null | number>(null)
   const [product, setProduct ] = useState(productDetails)
   const [createErrors, setCreateError]= useState<null | string>(null)
+  const [submit, setSubmit]= useState(false)
 
     const {product_name,   product_category, product_website,
     product_pitch, video_url, product_image, image_id, investment_amount,
@@ -73,9 +74,9 @@ const EMainPage = () => {
               image:certificate[0], certificate_id, number_of_employees , linkedIn,
               deadline, owner,company_address,
             product_image  : product_image[0]
-           };
-       
+           }       
         console.log(data)
+          setSubmit(true)
           axios.post("https://befunded.herokuapp.com/product/new", data , {
             headers: {
               Authorization: 'Bearer ' + varToken
@@ -86,6 +87,7 @@ const EMainPage = () => {
            }).catch(err=>{
             console.log(err)
             setCreateError(err.response.data.message)
+            setSubmit(false)
            })
 
           
@@ -134,7 +136,7 @@ const EMainPage = () => {
        <ProductReg3  setRegProduct={setRegProduct}  product={product} setProduct={setProduct}/>
     }
      {regProduct === 4 &&
-       <ProductReg4  setRegProduct={setRegProduct}  product={product} setProduct={setProduct}  submitForm={submitForm}/>
+       <ProductReg4  setRegProduct={setRegProduct}  product={product} setProduct={setProduct}  submit={submit}  submitForm={submitForm}/>
     }
     </form>
 

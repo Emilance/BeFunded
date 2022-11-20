@@ -27,17 +27,14 @@ const Signup = () => {
   const handleValidation =() => {
     setFormIsValid(true)
 
-    //Namess
+    //Names
     if (!forminput["name"] ) {
       setFormIsValid(false)
       setErrors({...errors ,  name: "Cannot be empty"});
     }
     
  
-      // if (!forminput["name"].match(/^[a-zA-Z]+$/)) {
-      //   formIsValid = false;
-      //   setErrors({...errors, name:"Cannot be a number"  });
-      // }
+   
     
 
     //Email
@@ -91,9 +88,11 @@ const Signup = () => {
       }).catch(err =>{
         console.log(err)
         setCreateError(err.response.data.message)
+        setSubmit(false)
       })
     }else{
       console.log(errors)
+      setSubmit(false)
     }
   }
   

@@ -2,9 +2,8 @@ import React from 'react'
 import './ProductPage.css';
 import { useNavigate } from 'react-router-dom';
 
-const ProductPage = ({product}: any) => {
+const ProductPage = ({product, user}: any) => {
   const navigate = useNavigate();
-
   return (
     <div className="productPage">
       {product  &&  product.map((data: any, i:any)=> {
@@ -20,7 +19,7 @@ const ProductPage = ({product}: any) => {
                         <h4 className="green">Edit Investment</h4>
                     </div>
                     <div className="topde">
-                        <p>By <span>Peter Emmanuel</span></p>
+                        <p>By <span>{user?.name}</span></p>
                         <h4 className="red">Delete Investment</h4>
 
                     </div>

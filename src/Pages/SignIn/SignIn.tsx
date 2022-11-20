@@ -76,9 +76,11 @@ const SignIn = () => {
       }).catch(err =>{
         console.log(err)
         setCreateError(err.response.data.message)
+        setSubmit(false)
       })
     }else{
       console.log(errors)
+      setSubmit(false)
     }
   }
   return (

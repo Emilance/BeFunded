@@ -110,6 +110,9 @@
     text-align:center;
 }
 
+.productReg4__nextButton:hover{
+    background: #2e41a1;
+}
 .checkbox-termsAndCondition{
     display: flex;
 }

@@ -163,8 +163,8 @@ const EDashboard = ({user}: any) => {
         </div>
         {active == "Products"  &&
         <>
-        {product ? 
-           <ProductPage product={product}/> 
+        {(product) ? 
+           <ProductPage product={product}   user={user}/> 
            :
             <EMainPage/>}
         </>}

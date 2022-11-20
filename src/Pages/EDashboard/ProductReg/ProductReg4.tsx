@@ -5,8 +5,9 @@ import {MdOutlineKeyboardBackspace}  from "react-icons/md"
 
 
 
-const ProductReg4 = ({setRegProduct, product, setProduct, submitForm}: any) => {
+const ProductReg4 = ({setRegProduct, product, submit, setProduct, submitForm}: any) => {
     const navigate = useNavigate();
+
   return (
     <div className='productReg4'>
       <div className="backbtn" onClick={() => setRegProduct(3)}>
@@ -68,7 +69,9 @@ const ProductReg4 = ({setRegProduct, product, setProduct, submitForm}: any) => {
          <span>I have read and agree to BeFundeds Terms and Condiions</span>
       </div>
 
-      <input type='submit' className="productReg4__nextButton"/>Start Campaign</div>
+      <input type='submit'  value={submit  ?"Loading ...": 'Submit' } className="productReg4__nextButton"/>
+      
+      </div>
    
 </div>
   )
