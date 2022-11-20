@@ -43,3 +43,17 @@
     border: none;
     cursor: pointer;
 }
+
+.errorContainer{
+    position: fixed;
+    top:10%;
+    right: 10%;
+    background-color: #4757a74f;
+    color:red;
+    max-width: 15rem;
+    width: auto;
+    height: fit-content;
+    padding: 1rem;
+    z-index: 500;
+    border-radius: 8px;
+}

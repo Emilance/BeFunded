@@ -6,6 +6,9 @@ import ProductReg from '../ProductReg/ProductReg';
 import ProductReg2 from '../ProductReg/ProductReg2';
 import ProductReg3 from '../ProductReg/ProductReg3';
 import ProductReg4 from '../ProductReg/ProductReg4';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 import './EMainPage.css';
 
 type productType = {
@@ -27,12 +30,17 @@ const EMainPage = () => {
   const navigate = useNavigate();
   const [regProduct,  setRegProduct]= useState<null | number>(null)
   const [product, setProduct ] = useState(productDetails)
+  const [createErrors, setCreateError]= useState<null | string>(null)
 
     const {product_name,   product_category, product_website,
     product_pitch, video_url, product_image, image_id, investment_amount,
     investment_raised, total_investors, amount_per_investors, equity_per_investors,
     certificate, certificate_id, company_address,  number_of_employees , linkedIn,
     deadline, owner}  = product
+
+    useEffect(() => {
+      AOS.init( {duration:500});
+    }, [])
     const varToken = getToken()
   const submitForm =async (e:React.ChangeEvent<HTMLFormElement>) => {
          e.preventDefault()
@@ -67,7 +75,7 @@ const EMainPage = () => {
             product_image  : product_image[0]
            };
        
-        
+        console.log(data)
           axios.post("https://befunded.herokuapp.com/product/new", data , {
             headers: {
               Authorization: 'Bearer ' + varToken
@@ -77,6 +85,7 @@ const EMainPage = () => {
             navigate(`/project/${res.data._id}`)
            }).catch(err=>{
             console.log(err)
+            setCreateError(err.response.data.message)
            })
 
           
@@ -90,7 +99,8 @@ const EMainPage = () => {
       regProduct == null  &&
 
     <div className="eMainPage">
-        <div className="eMainPage__container">
+    
+        <div data-aos="fade-right" className="eMainPage__container">
           {product ? 
           <>
             <h2 className="eMainHeading">Checkout Your Product or Create a New Product</h2>
@@ -109,7 +119,11 @@ const EMainPage = () => {
     }
 
     <form encType="multipart/form-data" onSubmit={submitForm}>
-
+      {createErrors   && 
+          <div className='errorContainer'>
+            <p>{createErrors}</p>
+          </div>
+      }
     {regProduct === 1 &&
        <ProductReg  setRegProduct={setRegProduct}  product={product} setProduct={setProduct}/>
     }

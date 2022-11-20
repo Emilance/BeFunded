@@ -22,6 +22,8 @@ const Signup = () => {
   const [formIsValid, setFormIsValid] = useState(false)
   const [submit, setSubmit]= useState(false)
   const [serverError, setServerError] = useState()
+  const [createErrors, setCreateError]= useState<null | string>(null)
+
   const handleValidation =() => {
     setFormIsValid(true)
 
@@ -88,7 +90,7 @@ const Signup = () => {
         navigate('/verify');
       }).catch(err =>{
         console.log(err)
-        setServerError(err.data.response.message)
+        setCreateError(err.response.data.message)
       })
     }else{
       console.log(errors)
@@ -115,7 +117,11 @@ const Signup = () => {
         </div>
       
         <form className='signIn__form' onSubmit={handleSignUp}>
-             {serverError && <p className="inputerrors" >{serverError}</p> }
+        {createErrors   && 
+          <div className='errorContainer'>
+            <p>{createErrors}</p>
+          </div>
+      }
           <div className="form_field">
             <label htmlFor="name">Name</label>
           {!formIsValid

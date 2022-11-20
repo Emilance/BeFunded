@@ -31,7 +31,7 @@ const ProductReg = ({setRegProduct, product, setProduct} : any) => {
                     value={product.product_category}
                     onChange={(e)=> setProduct({...product, product_category: e.target.value})}
                 >
-                    <option value="physical">Physical</option>
+                    <option >select</option>
                     <option value="Digital">Digital</option>
                 </select>
             </div>

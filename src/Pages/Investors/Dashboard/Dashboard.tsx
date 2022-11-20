@@ -16,6 +16,8 @@ import {GiHamburgerMenu}  from "react-icons/gi"
 import {ImCross} from "react-icons/im"
 import { getToken } from "../../../auth";
 import axios from "axios";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
@@ -34,7 +36,7 @@ const Idashboard = ({user}: any) => {
     const varToken = getToken()
 
         useEffect(()=>{
-
+            AOS.init( {duration:500});
         axios.get(`https://befunded.herokuapp.com/products/all`,  {
         headers: {
             Authorization: 'Bearer ' + varToken
@@ -98,7 +100,7 @@ const close =<GiHamburgerMenu
             
             
             
-           <nav className="mobileNav">
+           <nav data-aos="fade-right" className="mobileNav">
                 <>
                 <div  onClick={()=>{ setOpenBugger(false)
                              tabClick("dashboard")}} className={active == "dashboard" ? "singlei  singlei-active" : "singlei"}>

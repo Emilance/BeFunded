@@ -7,10 +7,15 @@ import ProfileBar from "../../Pages/Investors/Dashboard/DashboardHeader"
 import {GiHamburgerMenu}  from "react-icons/gi"
 import {ImCross} from "react-icons/im"
 import {useState} from "react"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Header = () => {
     const [openBugger, setOpenBugger] = useState(false)
     const navigate = useNavigate();
-
+    useEffect(() => {
+        AOS.init( {duration:500});
+      }, [])
     const handleLogin = () => {
 
         navigate('/login')
@@ -70,7 +75,7 @@ const Header = () => {
    
    
    
-           <nav className="mobileNav">
+           <nav data-aos="fade-right" className="mobileNav">
                 <ul >
                     <li>
                         <Link to="/">Home</Link>

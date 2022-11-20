@@ -21,6 +21,9 @@ import {FiSettings}  from  "react-icons/fi"
 import Header from '../../component/header/Header';
 import { getToken } from '../../auth';
 import axios from 'axios';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const pagesOptions = [
   {
@@ -77,7 +80,7 @@ const EDashboard = ({user}: any) => {
         const varToken = getToken()
       
       useEffect(()=>{
-      
+        AOS.init( {duration:500});
       axios.get(`https://befunded.herokuapp.com/product/mine`,  {
        headers: {
            Authorization: 'Bearer ' + varToken
@@ -121,7 +124,7 @@ const EDashboard = ({user}: any) => {
             
             
             
-            <nav className="mobileNav">
+            <nav data-aos="fade-right"  className="mobileNav">
                  <>
                  <div  onClick={()=>{
                    setOpenBugger(false)

@@ -19,6 +19,7 @@ const SignIn = () => {
   const [errors, setErrors] = useState<errorType>({email:null, password:null})
   const [formIsValid, setFormIsValid] = useState<null | boolean>(null)
   const [submit, setSubmit]= useState(false)
+  const [createErrors, setCreateError]= useState<null | string>(null)
 
    
   const handleValidation = async () => {
@@ -74,6 +75,8 @@ const SignIn = () => {
        navigate('/idashboard');
       }).catch(err =>{
         console.log(err)
+        setCreateError(err.response.data.message)
+
       })
     }else{
       console.log(errors)
@@ -101,6 +104,11 @@ const SignIn = () => {
         </div>
 
         <form className="signIn__form" onSubmit={handleSignUp}>
+        {createErrors   && 
+          <div className='errorContainer'>
+            <p>{createErrors}</p>
+          </div>
+      }
           <div className="form_field">
             <label htmlFor="email">Email Address</label>
             {!formIsValid
